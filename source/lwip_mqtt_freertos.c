@@ -88,6 +88,10 @@
 /*! @brief Priority of the temporary lwIP initialization thread. */
 #define APP_THREAD_PRIO DEFAULT_THREAD_PRIO
 
+/* Definitions used for practice 1 */
+#define ADAFRUIT_ADC_TOPIC "wapi/feeds/text"
+#define ADAFRUIT_LED_TOPIC "wapi/feeds/led"
+
 /*******************************************************************************
  * Prototypes
  ******************************************************************************/
@@ -111,7 +115,7 @@ static char client_id[40];
 static const struct mqtt_connect_client_info_t mqtt_client_info = {
     .client_id   = EXAMPLE_MQTT_CLIENT_ID,
     .client_user = "wapi",
-    .client_pass = "aio_zNrj92gUTdjcYevbP33oE9vNfyUR",
+    .client_pass = "aio_BjEg461TUmFzz6V62rCywFAT8YsG",
     .keep_alive  = 100,
     .will_topic  = NULL,
     .will_msg    = NULL,
@@ -157,6 +161,12 @@ static void mqtt_incoming_publish_cb(void *arg, const char *topic, u32_t tot_len
     LWIP_UNUSED_ARG(arg);
 
     PRINTF("Received %u bytes from the topic \"%s\": \"", tot_len, topic);
+
+    /* Toggle green led */
+    if(strcmp(topic, ADAFRUIT_LED_TOPIC) == 0) {
+    	GPIOE->PTOR |= 0x1 << 26;
+    }
+
 }
 
 /*!
@@ -191,7 +201,7 @@ static void mqtt_incoming_data_cb(void *arg, const u8_t *data, u16_t len, u8_t f
  */
 static void mqtt_subscribe_topics(mqtt_client_t *client)
 {
-    static const char *topics[] = {"wapi/feeds/text", "wapi/feeds/humidity"};
+    static const char *topics[] = {ADAFRUIT_ADC_TOPIC, ADAFRUIT_LED_TOPIC};
     int qos[]                   = {1, 1};
     err_t err;
     int i;
@@ -423,6 +433,12 @@ int main(void)
         .non_dma_memory = non_dma_memory,
 #endif /* FSL_FEATURE_SOC_LPC_ENET_COUNT */
     };
+
+    /* PREPARE LED COMPONENT */
+    SIM->SCGC5 = 0x2400;
+	PORTE->PCR[26] = 0x00000100;
+	GPIOE->PDOR |= 0x04000000;
+	GPIOE->PDDR |= 0x04000000;
 
     SYSMPU_Type *base = SYSMPU;
     BOARD_InitBootPins();
