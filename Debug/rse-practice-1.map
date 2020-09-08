@@ -14097,7 +14097,7 @@ END GROUP
                 0x14001000                __top_FLEX_RAM = 0x14001000
                 0x14001000                __top_RAM3 = 0x14001000
 
-.text           0x00000000    0x1c7e0
+.text           0x00000000    0x1c7f0
  FILL mask 0xff
                 0x00000000                __vectors_start__ = ABSOLUTE (.)
  *(SORT_BY_ALIGNMENT(.isr_vector))
@@ -14107,13 +14107,13 @@ END GROUP
                 0x00000198                . = ALIGN (0x4)
                 0x00000198                __section_table_start = .
                 0x00000198                __data_section_table = .
-                0x00000198        0x4 LONG 0x1c7e0 LOADADDR (.data)
+                0x00000198        0x4 LONG 0x1c7f0 LOADADDR (.data)
                 0x0000019c        0x4 LONG 0x20000000 ADDR (.data)
                 0x000001a0        0x4 LONG 0x48 SIZEOF (.data)
-                0x000001a4        0x4 LONG 0x1c7e0 LOADADDR (.data_RAM2)
+                0x000001a4        0x4 LONG 0x1c7f0 LOADADDR (.data_RAM2)
                 0x000001a8        0x4 LONG 0x1fff0000 ADDR (.data_RAM2)
                 0x000001ac        0x4 LONG 0x0 SIZEOF (.data_RAM2)
-                0x000001b0        0x4 LONG 0x1c7e0 LOADADDR (.data_RAM3)
+                0x000001b0        0x4 LONG 0x1c7f0 LOADADDR (.data_RAM3)
                 0x000001b4        0x4 LONG 0x14000000 ADDR (.data_RAM3)
                 0x000001b8        0x4 LONG 0x0 SIZEOF (.data_RAM3)
                 0x000001bc                __data_section_table_end = .
@@ -16035,742 +16035,743 @@ END GROUP
  .rodata.__assertion_failed.str1.4
                 0x00018740       0x14 ./utilities/fsl_assert.o
  .rodata.str1.4
-                0x00018754       0x54 ./source/lwip_mqtt_freertos.o
+                0x00018754       0x5d ./source/lwip_mqtt_freertos.o
+ *fill*         0x000187b1        0x3 ff
  .rodata.mqtt_client_info
-                0x000187a8       0x1c ./source/lwip_mqtt_freertos.o
+                0x000187b4       0x1c ./source/lwip_mqtt_freertos.o
  .rodata.mqtt_topic_subscribed_cb.str1.4
-                0x000187c4       0x4d ./source/lwip_mqtt_freertos.o
- *fill*         0x00018811        0x3 ff
+                0x000187d0       0x4d ./source/lwip_mqtt_freertos.o
+ *fill*         0x0001881d        0x3 ff
  .rodata.mqtt_incoming_publish_cb.str1.4
-                0x00018814       0x3b ./source/lwip_mqtt_freertos.o
- *fill*         0x0001884f        0x1 ff
+                0x00018820       0x3b ./source/lwip_mqtt_freertos.o
+ *fill*         0x0001885b        0x1 ff
  .rodata.mqtt_incoming_data_cb.str1.4
-                0x00018850       0x10 ./source/lwip_mqtt_freertos.o
+                0x0001885c       0x10 ./source/lwip_mqtt_freertos.o
  .rodata.mqtt_subscribe_topics.str1.4
-                0x00018860       0x69 ./source/lwip_mqtt_freertos.o
- *fill*         0x000188c9        0x3 ff
- .rodata        0x000188cc       0x14 ./source/lwip_mqtt_freertos.o
+                0x0001886c       0x69 ./source/lwip_mqtt_freertos.o
+ *fill*         0x000188d5        0x3 ff
+ .rodata        0x000188d8       0x14 ./source/lwip_mqtt_freertos.o
  .rodata.mqtt_connection_cb.str1.4
-                0x000188e0       0xc2 ./source/lwip_mqtt_freertos.o
- *fill*         0x000189a2        0x2 ff
+                0x000188ec       0xc2 ./source/lwip_mqtt_freertos.o
+ *fill*         0x000189ae        0x2 ff
  .rodata.connect_to_mqtt.str1.4
-                0x000189a4       0x25 ./source/lwip_mqtt_freertos.o
- *fill*         0x000189c9        0x3 ff
+                0x000189b0       0x25 ./source/lwip_mqtt_freertos.o
+ *fill*         0x000189d5        0x3 ff
  .rodata.mqtt_message_published_cb.str1.4
-                0x000189cc       0x4b ./source/lwip_mqtt_freertos.o
- *fill*         0x00018a17        0x1 ff
+                0x000189d8       0x4b ./source/lwip_mqtt_freertos.o
+ *fill*         0x00018a23        0x1 ff
  .rodata.publish_message.str1.4
-                0x00018a18       0x28 ./source/lwip_mqtt_freertos.o
+                0x00018a24       0x28 ./source/lwip_mqtt_freertos.o
  .rodata.app_thread.str1.4
-                0x00018a40      0x140 ./source/lwip_mqtt_freertos.o
+                0x00018a4c      0x140 ./source/lwip_mqtt_freertos.o
  .rodata.generate_client_id.str1.4
-                0x00018b80       0x32 ./source/lwip_mqtt_freertos.o
- *fill*         0x00018bb2        0x2 ff
+                0x00018b8c       0x32 ./source/lwip_mqtt_freertos.o
+ *fill*         0x00018bbe        0x2 ff
  .rodata.main.str1.4
-                0x00018bb4       0xca ./source/lwip_mqtt_freertos.o
- *fill*         0x00018c7e        0x2 ff
+                0x00018bc0       0xca ./source/lwip_mqtt_freertos.o
+ *fill*         0x00018c8a        0x2 ff
  .rodata.phyksz8081_ops
-                0x00018c80       0x18 ./phy/fsl_phyksz8081.o
-                0x00018c80                phyksz8081_ops
+                0x00018c8c       0x18 ./phy/fsl_phyksz8081.o
+                0x00018c8c                phyksz8081_ops
  .rodata.PHY_KSZ8081_GetLinkStatus.str1.4
-                0x00018c98       0x1f ./phy/fsl_phyksz8081.o
- *fill*         0x00018cb7        0x1 ff
+                0x00018ca4       0x1f ./phy/fsl_phyksz8081.o
+ *fill*         0x00018cc3        0x1 ff
  .rodata.PHY_KSZ8081_GetLinkSpeedDuplex.str1.4
-                0x00018cb8       0x1f ./phy/fsl_phyksz8081.o
- *fill*         0x00018cd7        0x1 ff
+                0x00018cc4       0x1f ./phy/fsl_phyksz8081.o
+ *fill*         0x00018ce3        0x1 ff
  .rodata.enet_ops
-                0x00018cd8       0x14 ./mdio/fsl_enet_mdio.o
-                0x00018cd8                enet_ops
+                0x00018ce4       0x14 ./mdio/fsl_enet_mdio.o
+                0x00018ce4                enet_ops
  .rodata.ENET_MDIO_Read.str1.4
-                0x00018cec       0x1e ./mdio/fsl_enet_mdio.o
- *fill*         0x00018d0a        0x2 ff
+                0x00018cf8       0x1e ./mdio/fsl_enet_mdio.o
+ *fill*         0x00018d16        0x2 ff
  .rodata.ethbroadcast
-                0x00018d0c        0x6 ./lwip/src/netif/ethernet.o
-                0x00018d0c                ethbroadcast
- *fill*         0x00018d12        0x2 ff
+                0x00018d18        0x6 ./lwip/src/netif/ethernet.o
+                0x00018d18                ethbroadcast
+ *fill*         0x00018d1e        0x2 ff
  .rodata.ethzero
-                0x00018d14        0x6 ./lwip/src/netif/ethernet.o
-                0x00018d14                ethzero
- *fill*         0x00018d1a        0x2 ff
+                0x00018d20        0x6 ./lwip/src/netif/ethernet.o
+                0x00018d20                ethzero
+ *fill*         0x00018d26        0x2 ff
  .rodata.ethernet_output.str1.4
-                0x00018d1c       0x31 ./lwip/src/netif/ethernet.o
- *fill*         0x00018d4d        0x3 ff
+                0x00018d28       0x31 ./lwip/src/netif/ethernet.o
+ *fill*         0x00018d59        0x3 ff
  .rodata.acd_add.str1.4
-                0x00018d50       0x1e ./lwip/src/core/ipv4/acd.o
- *fill*         0x00018d6e        0x2 ff
+                0x00018d5c       0x1e ./lwip/src/core/ipv4/acd.o
+ *fill*         0x00018d7a        0x2 ff
  .rodata.dhcp_inc_pcb_refcount.str1.4
-                0x00018d70       0x25 ./lwip/src/core/ipv4/dhcp.o
- *fill*         0x00018d95        0x3 ff
+                0x00018d7c       0x25 ./lwip/src/core/ipv4/dhcp.o
+ *fill*         0x00018da1        0x3 ff
  .rodata.dhcp_dec_pcb_refcount.str1.4
-                0x00018d98       0x24 ./lwip/src/core/ipv4/dhcp.o
+                0x00018da4       0x24 ./lwip/src/core/ipv4/dhcp.o
  .rodata.dhcp_select.str1.4
-                0x00018dbc       0x36 ./lwip/src/core/ipv4/dhcp.o
+                0x00018dc8       0x36 ./lwip/src/core/ipv4/dhcp.o
                                  0x3a (size before relaxing)
- *fill*         0x00018df2        0x2 ff
+ *fill*         0x00018dfe        0x2 ff
  .rodata.dhcp_set_struct.str1.4
-                0x00018df4       0x44 ./lwip/src/core/ipv4/dhcp.o
+                0x00018e00       0x44 ./lwip/src/core/ipv4/dhcp.o
  .rodata.dhcp_start.str1.4
-                0x00018e38       0x21 ./lwip/src/core/ipv4/dhcp.o
- *fill*         0x00018e59        0x3 ff
+                0x00018e44       0x21 ./lwip/src/core/ipv4/dhcp.o
+ *fill*         0x00018e65        0x3 ff
  .rodata.dhcp_bind.str1.4
-                0x00018e5c       0x34 ./lwip/src/core/ipv4/dhcp.o
+                0x00018e68       0x34 ./lwip/src/core/ipv4/dhcp.o
  .rodata.dhcp_option.str1.4
-                0x00018e90       0x42 ./lwip/src/core/ipv4/dhcp.o
- *fill*         0x00018ed2        0x2 ff
+                0x00018e9c       0x42 ./lwip/src/core/ipv4/dhcp.o
+ *fill*         0x00018ede        0x2 ff
  .rodata.dhcp_option_byte.str1.4
-                0x00018ed4       0x35 ./lwip/src/core/ipv4/dhcp.o
- *fill*         0x00018f09        0x3 ff
+                0x00018ee0       0x35 ./lwip/src/core/ipv4/dhcp.o
+ *fill*         0x00018f15        0x3 ff
  .rodata.dhcp_option_short.str1.4
-                0x00018f0c       0x3b ./lwip/src/core/ipv4/dhcp.o
- *fill*         0x00018f47        0x1 ff
+                0x00018f18       0x3b ./lwip/src/core/ipv4/dhcp.o
+ *fill*         0x00018f53        0x1 ff
  .rodata.dhcp_option_long.str1.4
-                0x00018f48       0x3a ./lwip/src/core/ipv4/dhcp.o
- *fill*         0x00018f82        0x2 ff
+                0x00018f54       0x3a ./lwip/src/core/ipv4/dhcp.o
+ *fill*         0x00018f8e        0x2 ff
  .rodata.dhcp_parse_reply.str1.4
-                0x00018f84       0x11 ./lwip/src/core/ipv4/dhcp.o
- *fill*         0x00018f95        0x3 ff
+                0x00018f90       0x11 ./lwip/src/core/ipv4/dhcp.o
+ *fill*         0x00018fa1        0x3 ff
  .rodata.dhcp_create_msg.str1.4
-                0x00018f98       0x80 ./lwip/src/core/ipv4/dhcp.o
+                0x00018fa4       0x80 ./lwip/src/core/ipv4/dhcp.o
  .rodata.etharp_find_entry.str1.4
-                0x00019018       0x95 ./lwip/src/core/ipv4/etharp.o
- *fill*         0x000190ad        0x3 ff
+                0x00019024       0x95 ./lwip/src/core/ipv4/etharp.o
+ *fill*         0x000190b9        0x3 ff
  .rodata.etharp_update_arp_entry.str1.4
-                0x000190b0       0x24 ./lwip/src/core/ipv4/etharp.o
+                0x000190bc       0x24 ./lwip/src/core/ipv4/etharp.o
  .rodata.etharp_get_entry.str1.4
-                0x000190d4       0x20 ./lwip/src/core/ipv4/etharp.o
+                0x000190e0       0x20 ./lwip/src/core/ipv4/etharp.o
                                  0x30 (size before relaxing)
  .rodata.etharp_input.str1.4
-                0x000190f4        0x3 ./lwip/src/core/ipv4/etharp.o
+                0x00019100        0x3 ./lwip/src/core/ipv4/etharp.o
  .rodata.etharp_output_to_arp_index.str1.4
-                0x000190f4       0x30 ./lwip/src/core/ipv4/etharp.o
+                0x00019100       0x30 ./lwip/src/core/ipv4/etharp.o
  .rodata.etharp_output.str1.4
-                0x00019124        0xa ./lwip/src/core/ipv4/etharp.o
- *fill*         0x0001912e        0x2 ff
+                0x00019130        0xa ./lwip/src/core/ipv4/etharp.o
+ *fill*         0x0001913a        0x2 ff
  .rodata.etharp_query.str1.4
-                0x00019130       0x52 ./lwip/src/core/ipv4/etharp.o
- *fill*         0x00019182        0x2 ff
+                0x0001913c       0x52 ./lwip/src/core/ipv4/etharp.o
+ *fill*         0x0001918e        0x2 ff
  .rodata.etharp_raw.str1.4
-                0x00019184       0x75 ./lwip/src/core/ipv4/etharp.o
- *fill*         0x000191f9        0x3 ff
+                0x00019190       0x75 ./lwip/src/core/ipv4/etharp.o
+ *fill*         0x00019205        0x3 ff
  .rodata.icmp_input.str1.4
-                0x000191fc       0x6a ./lwip/src/core/ipv4/icmp.o
- *fill*         0x00019266        0x2 ff
+                0x00019208       0x6a ./lwip/src/core/ipv4/icmp.o
+ *fill*         0x00019272        0x2 ff
  .rodata.icmp_send_response.str1.4
-                0x00019268       0x2c ./lwip/src/core/ipv4/icmp.o
+                0x00019274       0x2c ./lwip/src/core/ipv4/icmp.o
  .rodata.ip4_output_if_src.str1.4
-                0x00019294       0x39 ./lwip/src/core/ipv4/ip4.o
- *fill*         0x000192cd        0x3 ff
+                0x000192a0       0x39 ./lwip/src/core/ipv4/ip4.o
+ *fill*         0x000192d9        0x3 ff
  .rodata.ip_addr_any
-                0x000192d0        0x4 ./lwip/src/core/ipv4/ip4_addr.o
-                0x000192d0                ip_addr_any
+                0x000192dc        0x4 ./lwip/src/core/ipv4/ip4_addr.o
+                0x000192dc                ip_addr_any
  .rodata.ip_addr_broadcast
-                0x000192d4        0x4 ./lwip/src/core/ipv4/ip4_addr.o
-                0x000192d4                ip_addr_broadcast
+                0x000192e0        0x4 ./lwip/src/core/ipv4/ip4_addr.o
+                0x000192e0                ip_addr_broadcast
  .rodata.ip4addr_aton.str1.4
-                0x000192d8        0xa ./lwip/src/core/ipv4/ip4_addr.o
- *fill*         0x000192e2        0x2 ff
+                0x000192e4        0xa ./lwip/src/core/ipv4/ip4_addr.o
+ *fill*         0x000192ee        0x2 ff
  .rodata.ip_reass_free_complete_datagram.str1.4
-                0x000192e4       0x62 ./lwip/src/core/ipv4/ip4_frag.o
- *fill*         0x00019346        0x2 ff
+                0x000192f0       0x62 ./lwip/src/core/ipv4/ip4_frag.o
+ *fill*         0x00019352        0x2 ff
  .rodata.ip_reass_dequeue_datagram.str1.4
-                0x00019348       0x19 ./lwip/src/core/ipv4/ip4_frag.o
- *fill*         0x00019361        0x3 ff
+                0x00019354       0x19 ./lwip/src/core/ipv4/ip4_frag.o
+ *fill*         0x0001936d        0x3 ff
  .rodata.ip_reass_chain_frag_into_datagram_and_validate.str1.4
-                0x00019364       0x8a ./lwip/src/core/ipv4/ip4_frag.o
- *fill*         0x000193ee        0x2 ff
+                0x00019370       0x8a ./lwip/src/core/ipv4/ip4_frag.o
+ *fill*         0x000193fa        0x2 ff
  .rodata.ip4_reass.str1.4
-                0x000193f0       0x48 ./lwip/src/core/ipv4/ip4_frag.o
+                0x000193fc       0x48 ./lwip/src/core/ipv4/ip4_frag.o
  .rodata.ip_frag_free_pbuf_custom_ref.str1.4
-                0x00019438       0x48 ./lwip/src/core/ipv4/ip4_frag.o
+                0x00019444       0x48 ./lwip/src/core/ipv4/ip4_frag.o
                                   0xa (size before relaxing)
  .rodata.ipfrag_free_pbuf_custom.str1.4
-                0x00019438       0x15 ./lwip/src/core/ipv4/ip4_frag.o
- *fill*         0x0001944d        0x3 ff
+                0x00019444       0x15 ./lwip/src/core/ipv4/ip4_frag.o
+ *fill*         0x00019459        0x3 ff
  .rodata.ip4_frag.str1.4
-                0x00019450       0x4b ./lwip/src/core/ipv4/ip4_frag.o
+                0x0001945c       0x4b ./lwip/src/core/ipv4/ip4_frag.o
                                  0x4f (size before relaxing)
- *fill*         0x0001949b        0x1 ff
+ *fill*         0x000194a7        0x1 ff
  .rodata.dns_send.str1.4
-                0x0001949c       0x18 ./lwip/src/core/dns.o
+                0x000194a8       0x18 ./lwip/src/core/dns.o
  .rodata.dns_check_entry.str1.4
-                0x000194b4       0x3b ./lwip/src/core/dns.o
- *fill*         0x000194ef        0x1 ff
+                0x000194c0       0x3b ./lwip/src/core/dns.o
+ *fill*         0x000194fb        0x1 ff
  .rodata.plug_holes.str1.4
-                0x000194f0       0x7a ./lwip/src/core/mem.o
- *fill*         0x0001956a        0x2 ff
+                0x000194fc       0x7a ./lwip/src/core/mem.o
+ *fill*         0x00019576        0x2 ff
  .rodata.mem_init.str1.4
-                0x0001956c       0x1b ./lwip/src/core/mem.o
- *fill*         0x00019587        0x1 ff
+                0x00019578       0x1b ./lwip/src/core/mem.o
+ *fill*         0x00019593        0x1 ff
  .rodata.mem_free.str1.4
-                0x00019588       0x9a ./lwip/src/core/mem.o
- *fill*         0x00019622        0x2 ff
+                0x00019594       0x9a ./lwip/src/core/mem.o
+ *fill*         0x0001962e        0x2 ff
  .rodata.mem_trim.str1.4
-                0x00019624       0x49 ./lwip/src/core/mem.o
- *fill*         0x0001966d        0x3 ff
+                0x00019630       0x49 ./lwip/src/core/mem.o
+ *fill*         0x00019679        0x3 ff
  .rodata.mem_malloc.str1.4
-                0x00019670       0x9f ./lwip/src/core/mem.o
- *fill*         0x0001970f        0x1 ff
+                0x0001967c       0x9f ./lwip/src/core/mem.o
+ *fill*         0x0001971b        0x1 ff
  .rodata.str1.4
-                0x00019710       0xa6 ./lwip/src/core/memp.o
- *fill*         0x000197b6        0x2 ff
+                0x0001971c       0xa6 ./lwip/src/core/memp.o
+ *fill*         0x000197c2        0x2 ff
  .rodata.memp_RAW_PCB
-                0x000197b8       0x10 ./lwip/src/core/memp.o
-                0x000197b8                memp_RAW_PCB
+                0x000197c4       0x10 ./lwip/src/core/memp.o
+                0x000197c4                memp_RAW_PCB
  .rodata.memp_UDP_PCB
-                0x000197c8       0x10 ./lwip/src/core/memp.o
-                0x000197c8                memp_UDP_PCB
+                0x000197d4       0x10 ./lwip/src/core/memp.o
+                0x000197d4                memp_UDP_PCB
  .rodata.memp_TCP_PCB
-                0x000197d8       0x10 ./lwip/src/core/memp.o
-                0x000197d8                memp_TCP_PCB
+                0x000197e4       0x10 ./lwip/src/core/memp.o
+                0x000197e4                memp_TCP_PCB
  .rodata.memp_TCP_PCB_LISTEN
-                0x000197e8       0x10 ./lwip/src/core/memp.o
-                0x000197e8                memp_TCP_PCB_LISTEN
+                0x000197f4       0x10 ./lwip/src/core/memp.o
+                0x000197f4                memp_TCP_PCB_LISTEN
  .rodata.memp_TCP_SEG
-                0x000197f8       0x10 ./lwip/src/core/memp.o
-                0x000197f8                memp_TCP_SEG
+                0x00019804       0x10 ./lwip/src/core/memp.o
+                0x00019804                memp_TCP_SEG
  .rodata.memp_REASSDATA
-                0x00019808       0x10 ./lwip/src/core/memp.o
-                0x00019808                memp_REASSDATA
+                0x00019814       0x10 ./lwip/src/core/memp.o
+                0x00019814                memp_REASSDATA
  .rodata.memp_FRAG_PBUF
-                0x00019818       0x10 ./lwip/src/core/memp.o
-                0x00019818                memp_FRAG_PBUF
+                0x00019824       0x10 ./lwip/src/core/memp.o
+                0x00019824                memp_FRAG_PBUF
  .rodata.memp_NETBUF
-                0x00019828       0x10 ./lwip/src/core/memp.o
-                0x00019828                memp_NETBUF
+                0x00019834       0x10 ./lwip/src/core/memp.o
+                0x00019834                memp_NETBUF
  .rodata.memp_NETCONN
-                0x00019838       0x10 ./lwip/src/core/memp.o
-                0x00019838                memp_NETCONN
+                0x00019844       0x10 ./lwip/src/core/memp.o
+                0x00019844                memp_NETCONN
  .rodata.memp_TCPIP_MSG_API
-                0x00019848       0x10 ./lwip/src/core/memp.o
-                0x00019848                memp_TCPIP_MSG_API
+                0x00019854       0x10 ./lwip/src/core/memp.o
+                0x00019854                memp_TCPIP_MSG_API
  .rodata.memp_TCPIP_MSG_INPKT
-                0x00019858       0x10 ./lwip/src/core/memp.o
-                0x00019858                memp_TCPIP_MSG_INPKT
+                0x00019864       0x10 ./lwip/src/core/memp.o
+                0x00019864                memp_TCPIP_MSG_INPKT
  .rodata.memp_SYS_TIMEOUT
-                0x00019868       0x10 ./lwip/src/core/memp.o
-                0x00019868                memp_SYS_TIMEOUT
+                0x00019874       0x10 ./lwip/src/core/memp.o
+                0x00019874                memp_SYS_TIMEOUT
  .rodata.memp_NETDB
-                0x00019878       0x10 ./lwip/src/core/memp.o
-                0x00019878                memp_NETDB
+                0x00019884       0x10 ./lwip/src/core/memp.o
+                0x00019884                memp_NETDB
  .rodata.memp_PBUF
-                0x00019888       0x10 ./lwip/src/core/memp.o
-                0x00019888                memp_PBUF
+                0x00019894       0x10 ./lwip/src/core/memp.o
+                0x00019894                memp_PBUF
  .rodata.memp_PBUF_POOL
-                0x00019898       0x10 ./lwip/src/core/memp.o
-                0x00019898                memp_PBUF_POOL
+                0x000198a4       0x10 ./lwip/src/core/memp.o
+                0x000198a4                memp_PBUF_POOL
  .rodata.memp_pools
-                0x000198a8       0x3c ./lwip/src/core/memp.o
-                0x000198a8                memp_pools
+                0x000198b4       0x3c ./lwip/src/core/memp.o
+                0x000198b4                memp_pools
  .rodata.do_memp_malloc_pool.str1.4
-                0x000198e4       0x23 ./lwip/src/core/memp.o
- *fill*         0x00019907        0x1 ff
+                0x000198f0       0x23 ./lwip/src/core/memp.o
+ *fill*         0x00019913        0x1 ff
  .rodata.memp_malloc.str1.4
-                0x00019908       0x1d ./lwip/src/core/memp.o
+                0x00019914       0x1d ./lwip/src/core/memp.o
                                  0x23 (size before relaxing)
- *fill*         0x00019925        0x3 ff
+ *fill*         0x00019931        0x3 ff
  .rodata.do_memp_free_pool.str1.4
-                0x00019928       0x20 ./lwip/src/core/memp.o
+                0x00019934       0x20 ./lwip/src/core/memp.o
  .rodata.memp_free.str1.4
-                0x00019948       0x1b ./lwip/src/core/memp.o
- *fill*         0x00019963        0x1 ff
+                0x00019954       0x1b ./lwip/src/core/memp.o
+ *fill*         0x0001996f        0x1 ff
  .rodata.netif_add.str1.4
-                0x00019964       0x82 ./lwip/src/core/netif.o
+                0x00019970       0x82 ./lwip/src/core/netif.o
                                  0x86 (size before relaxing)
- *fill*         0x000199e6        0x2 ff
+ *fill*         0x000199f2        0x2 ff
  .rodata.netif_do_set_ipaddr.str1.4
-                0x000199e8       0x10 ./lwip/src/core/netif.o
+                0x000199f4       0x10 ./lwip/src/core/netif.o
  .rodata.netif_set_up.str1.4
-                0x000199f8       0x1c ./lwip/src/core/netif.o
+                0x00019a04       0x1c ./lwip/src/core/netif.o
  .rodata.netif_issue_reports.str1.4
-                0x00019a14       0x23 ./lwip/src/core/netif.o
- *fill*         0x00019a37        0x1 ff
+                0x00019a20       0x23 ./lwip/src/core/netif.o
+ *fill*         0x00019a43        0x1 ff
  .rodata.pbuf_alloc.str1.4
-                0x00019a38       0xab ./lwip/src/core/pbuf.o
- *fill*         0x00019ae3        0x1 ff
+                0x00019a44       0xab ./lwip/src/core/pbuf.o
+ *fill*         0x00019aef        0x1 ff
  .rodata.pbuf_alloc_reference.str1.4
-                0x00019ae4       0x12 ./lwip/src/core/pbuf.o
- *fill*         0x00019af6        0x2 ff
+                0x00019af0       0x12 ./lwip/src/core/pbuf.o
+ *fill*         0x00019b02        0x2 ff
  .rodata.pbuf_realloc.str1.4
-                0x00019af8       0x4c ./lwip/src/core/pbuf.o
+                0x00019b04       0x4c ./lwip/src/core/pbuf.o
  .rodata.pbuf_add_header_impl.str1.4
-                0x00019b44        0xa ./lwip/src/core/pbuf.o
+                0x00019b50        0xa ./lwip/src/core/pbuf.o
  .rodata.pbuf_remove_header.str1.4
-                0x00019b44       0x1e ./lwip/src/core/pbuf.o
+                0x00019b50       0x1e ./lwip/src/core/pbuf.o
                                  0x23 (size before relaxing)
- *fill*         0x00019b62        0x2 ff
+ *fill*         0x00019b6e        0x2 ff
  .rodata.pbuf_free.str1.4
-                0x00019b64       0x4e ./lwip/src/core/pbuf.o
- *fill*         0x00019bb2        0x2 ff
+                0x00019b70       0x4e ./lwip/src/core/pbuf.o
+ *fill*         0x00019bbe        0x2 ff
  .rodata.pbuf_ref.str1.4
-                0x00019bb4       0x12 ./lwip/src/core/pbuf.o
- *fill*         0x00019bc6        0x2 ff
+                0x00019bc0       0x12 ./lwip/src/core/pbuf.o
+ *fill*         0x00019bd2        0x2 ff
  .rodata.pbuf_cat.str1.4
-                0x00019bc8       0x78 ./lwip/src/core/pbuf.o
+                0x00019bd4       0x78 ./lwip/src/core/pbuf.o
  .rodata.pbuf_copy.str1.4
-                0x00019c40       0x9e ./lwip/src/core/pbuf.o
- *fill*         0x00019cde        0x2 ff
+                0x00019c4c       0x9e ./lwip/src/core/pbuf.o
+ *fill*         0x00019cea        0x2 ff
  .rodata.pbuf_copy_partial.str1.4
-                0x00019ce0       0x43 ./lwip/src/core/pbuf.o
- *fill*         0x00019d23        0x1 ff
+                0x00019cec       0x43 ./lwip/src/core/pbuf.o
+ *fill*         0x00019d2f        0x1 ff
  .rodata.pbuf_get_contiguous.str1.4
-                0x00019d24       0x49 ./lwip/src/core/pbuf.o
- *fill*         0x00019d6d        0x3 ff
+                0x00019d30       0x49 ./lwip/src/core/pbuf.o
+ *fill*         0x00019d79        0x3 ff
  .rodata.pbuf_take.str1.4
-                0x00019d70       0x82 ./lwip/src/core/pbuf.o
- *fill*         0x00019df2        0x2 ff
+                0x00019d7c       0x82 ./lwip/src/core/pbuf.o
+ *fill*         0x00019dfe        0x2 ff
  .rodata.pbuf_take_at.str1.4
-                0x00019df4       0x17 ./lwip/src/core/pbuf.o
- *fill*         0x00019e0b        0x1 ff
+                0x00019e00       0x17 ./lwip/src/core/pbuf.o
+ *fill*         0x00019e17        0x1 ff
  .rodata.pbuf_clone.str1.4
-                0x00019e0c       0x11 ./lwip/src/core/pbuf.o
- *fill*         0x00019e1d        0x3 ff
+                0x00019e18       0x11 ./lwip/src/core/pbuf.o
+ *fill*         0x00019e29        0x3 ff
  .rodata.raw_input.str1.4
-                0x00019e20       0x49 ./lwip/src/core/raw.o
- *fill*         0x00019e69        0x3 ff
+                0x00019e2c       0x49 ./lwip/src/core/raw.o
+ *fill*         0x00019e75        0x3 ff
  .rodata.tcp_backoff
-                0x00019e6c        0xd ./lwip/src/core/tcp.o
- *fill*         0x00019e79        0x3 ff
+                0x00019e78        0xd ./lwip/src/core/tcp.o
+ *fill*         0x00019e85        0x3 ff
  .rodata.tcp_persist_backoff
-                0x00019e7c        0x7 ./lwip/src/core/tcp.o
- *fill*         0x00019e83        0x1 ff
+                0x00019e88        0x7 ./lwip/src/core/tcp.o
+ *fill*         0x00019e8f        0x1 ff
  .rodata.tcp_pcb_lists
-                0x00019e84       0x10 ./lwip/src/core/tcp.o
-                0x00019e84                tcp_pcb_lists
+                0x00019e90       0x10 ./lwip/src/core/tcp.o
+                0x00019e90                tcp_pcb_lists
  .rodata.tcp_free.str1.4
-                0x00019e94       0x11 ./lwip/src/core/tcp.o
- *fill*         0x00019ea5        0x3 ff
+                0x00019ea0       0x11 ./lwip/src/core/tcp.o
+ *fill*         0x00019eb1        0x3 ff
  .rodata.tcp_free_listen.str1.4
-                0x00019ea8       0x19 ./lwip/src/core/tcp.o
- *fill*         0x00019ec1        0x3 ff
+                0x00019eb4       0x19 ./lwip/src/core/tcp.o
+ *fill*         0x00019ecd        0x3 ff
  .rodata.tcp_remove_listener.str1.4
-                0x00019ec4       0x26 ./lwip/src/core/tcp.o
- *fill*         0x00019eea        0x2 ff
+                0x00019ed0       0x26 ./lwip/src/core/tcp.o
+ *fill*         0x00019ef6        0x2 ff
  .rodata.tcp_listen_closed.str1.4
-                0x00019eec       0x21 ./lwip/src/core/tcp.o
- *fill*         0x00019f0d        0x3 ff
+                0x00019ef8       0x21 ./lwip/src/core/tcp.o
+ *fill*         0x00019f19        0x3 ff
  .rodata.tcp_backlog_delayed.str1.4
-                0x00019f10       0x15 ./lwip/src/core/tcp.o
- *fill*         0x00019f25        0x3 ff
+                0x00019f1c       0x15 ./lwip/src/core/tcp.o
+ *fill*         0x00019f31        0x3 ff
  .rodata.tcp_close_shutdown.str1.4
-                0x00019f28       0x39 ./lwip/src/core/tcp.o
- *fill*         0x00019f61        0x3 ff
+                0x00019f34       0x39 ./lwip/src/core/tcp.o
+ *fill*         0x00019f6d        0x3 ff
  .rodata.tcp_close.str1.4
-                0x00019f64       0x17 ./lwip/src/core/tcp.o
+                0x00019f70       0x17 ./lwip/src/core/tcp.o
                                  0x1b (size before relaxing)
- *fill*         0x00019f7b        0x1 ff
+ *fill*         0x00019f87        0x1 ff
  .rodata.tcp_abandon.str1.4
-                0x00019f7c       0x4d ./lwip/src/core/tcp.o
- *fill*         0x00019fc9        0x3 ff
+                0x00019f88       0x4d ./lwip/src/core/tcp.o
+ *fill*         0x00019fd5        0x3 ff
  .rodata.tcp_bind.str1.4
-                0x00019fcc       0x40 ./lwip/src/core/tcp.o
+                0x00019fd8       0x40 ./lwip/src/core/tcp.o
  .rodata.tcp_update_rcv_ann_wnd.str1.4
-                0x0001a00c       0x3e ./lwip/src/core/tcp.o
- *fill*         0x0001a04a        0x2 ff
+                0x0001a018       0x3e ./lwip/src/core/tcp.o
+ *fill*         0x0001a056        0x2 ff
  .rodata.tcp_recved.str1.4
-                0x0001a04c       0x3e ./lwip/src/core/tcp.o
- *fill*         0x0001a08a        0x2 ff
+                0x0001a058       0x3e ./lwip/src/core/tcp.o
+ *fill*         0x0001a096        0x2 ff
  .rodata.tcp_connect.str1.4
-                0x0001a08c       0x68 ./lwip/src/core/tcp.o
+                0x0001a098       0x68 ./lwip/src/core/tcp.o
  .rodata.tcp_slowtmr.str1.4
-                0x0001a0f4      0x1ca ./lwip/src/core/tcp.o
- *fill*         0x0001a2be        0x2 ff
+                0x0001a100      0x1ca ./lwip/src/core/tcp.o
+ *fill*         0x0001a2ca        0x2 ff
  .rodata.tcp_process_refused_data.str1.4
-                0x0001a2c0       0x26 ./lwip/src/core/tcp.o
- *fill*         0x0001a2e6        0x2 ff
+                0x0001a2cc       0x26 ./lwip/src/core/tcp.o
+ *fill*         0x0001a2f2        0x2 ff
  .rodata.tcp_recv_null.str1.4
-                0x0001a2e8       0x1b ./lwip/src/core/tcp.o
- *fill*         0x0001a303        0x1 ff
+                0x0001a2f4       0x1b ./lwip/src/core/tcp.o
+ *fill*         0x0001a30f        0x1 ff
  .rodata.tcp_kill_state.str1.4
-                0x0001a304        0xe ./lwip/src/core/tcp.o
- *fill*         0x0001a312        0x2 ff
+                0x0001a310        0xe ./lwip/src/core/tcp.o
+ *fill*         0x0001a31e        0x2 ff
  .rodata.tcp_recv.str1.4
-                0x0001a314       0x27 ./lwip/src/core/tcp.o
- *fill*         0x0001a33b        0x1 ff
+                0x0001a320       0x27 ./lwip/src/core/tcp.o
+ *fill*         0x0001a347        0x1 ff
  .rodata.tcp_sent.str1.4
-                0x0001a33c       0x27 ./lwip/src/core/tcp.o
- *fill*         0x0001a363        0x1 ff
+                0x0001a348       0x27 ./lwip/src/core/tcp.o
+ *fill*         0x0001a36f        0x1 ff
  .rodata.tcp_err.str1.4
-                0x0001a364       0x26 ./lwip/src/core/tcp.o
- *fill*         0x0001a38a        0x2 ff
+                0x0001a370       0x26 ./lwip/src/core/tcp.o
+ *fill*         0x0001a396        0x2 ff
  .rodata.tcp_poll.str1.4
-                0x0001a38c       0x36 ./lwip/src/core/tcp.o
- *fill*         0x0001a3c2        0x2 ff
+                0x0001a398       0x36 ./lwip/src/core/tcp.o
+ *fill*         0x0001a3ce        0x2 ff
  .rodata.tcp_pcb_purge.str1.4
-                0x0001a3c4       0x1b ./lwip/src/core/tcp.o
- *fill*         0x0001a3df        0x1 ff
+                0x0001a3d0       0x1b ./lwip/src/core/tcp.o
+ *fill*         0x0001a3eb        0x1 ff
  .rodata.tcp_pcb_remove.str1.4
-                0x0001a3e0       0x6d ./lwip/src/core/tcp.o
- *fill*         0x0001a44d        0x3 ff
+                0x0001a3ec       0x6d ./lwip/src/core/tcp.o
+ *fill*         0x0001a459        0x3 ff
  .rodata.tcp_next_iss.str1.4
-                0x0001a450       0x1a ./lwip/src/core/tcp.o
- *fill*         0x0001a46a        0x2 ff
+                0x0001a45c       0x1a ./lwip/src/core/tcp.o
+ *fill*         0x0001a476        0x2 ff
  .rodata.tcp_eff_send_mss_netif.str1.4
-                0x0001a46c       0x27 ./lwip/src/core/tcp.o
- *fill*         0x0001a493        0x1 ff
+                0x0001a478       0x27 ./lwip/src/core/tcp.o
+ *fill*         0x0001a49f        0x1 ff
  .rodata.tcp_netif_ip_addr_changed_pcblist.str1.4
-                0x0001a494       0x34 ./lwip/src/core/tcp.o
+                0x0001a4a0       0x34 ./lwip/src/core/tcp.o
  .rodata.tcp_input.str1.4
-                0x0001a4c8      0x172 ./lwip/src/core/tcp_in.o
- *fill*         0x0001a63a        0x2 ff
+                0x0001a4d4      0x172 ./lwip/src/core/tcp_in.o
+ *fill*         0x0001a646        0x2 ff
  .rodata.tcp_input_delayed_close.str1.4
-                0x0001a63c       0x25 ./lwip/src/core/tcp_in.o
- *fill*         0x0001a661        0x3 ff
+                0x0001a648       0x25 ./lwip/src/core/tcp_in.o
+ *fill*         0x0001a66d        0x3 ff
  .rodata.tcp_listen_input.str1.4
-                0x0001a664       0x1e ./lwip/src/core/tcp_in.o
- *fill*         0x0001a682        0x2 ff
+                0x0001a670       0x1e ./lwip/src/core/tcp_in.o
+ *fill*         0x0001a68e        0x2 ff
  .rodata.tcp_timewait_input.str1.4
-                0x0001a684       0x20 ./lwip/src/core/tcp_in.o
+                0x0001a690       0x20 ./lwip/src/core/tcp_in.o
  .rodata.tcp_process.str1.4
-                0x0001a6a4       0x86 ./lwip/src/core/tcp_in.o
- *fill*         0x0001a72a        0x2 ff
+                0x0001a6b0       0x86 ./lwip/src/core/tcp_in.o
+ *fill*         0x0001a736        0x2 ff
  .rodata.tcp_free_acked_segments.str1.4
-                0x0001a72c       0x48 ./lwip/src/core/tcp_in.o
+                0x0001a738       0x48 ./lwip/src/core/tcp_in.o
  .rodata.tcp_receive.str1.4
-                0x0001a774       0xcf ./lwip/src/core/tcp_in.o
- *fill*         0x0001a843        0x1 ff
+                0x0001a780       0xcf ./lwip/src/core/tcp_in.o
+ *fill*         0x0001a84f        0x1 ff
  .rodata.tcp_parseopt.str1.4
-                0x0001a844       0x1a ./lwip/src/core/tcp_in.o
- *fill*         0x0001a85e        0x2 ff
+                0x0001a850       0x1a ./lwip/src/core/tcp_in.o
+ *fill*         0x0001a86a        0x2 ff
  .rodata.tcp_create_segment.str1.4
-                0x0001a860       0x59 ./lwip/src/core/tcp_out.o
- *fill*         0x0001a8b9        0x3 ff
+                0x0001a86c       0x59 ./lwip/src/core/tcp_out.o
+ *fill*         0x0001a8c5        0x3 ff
  .rodata.tcp_pbuf_prealloc.str1.4
-                0x0001a8bc       0x58 ./lwip/src/core/tcp_out.o
+                0x0001a8c8       0x58 ./lwip/src/core/tcp_out.o
  .rodata.tcp_write_checks.str1.4
-                0x0001a914       0x8e ./lwip/src/core/tcp_out.o
- *fill*         0x0001a9a2        0x2 ff
+                0x0001a920       0x8e ./lwip/src/core/tcp_out.o
+ *fill*         0x0001a9ae        0x2 ff
  .rodata.tcp_write.str1.4
-                0x0001a9a4      0x24e ./lwip/src/core/tcp_out.o
+                0x0001a9b0      0x24e ./lwip/src/core/tcp_out.o
                                 0x252 (size before relaxing)
- *fill*         0x0001abf2        0x2 ff
+ *fill*         0x0001abfe        0x2 ff
  .rodata.tcp_split_unsent_seg.str1.4
-                0x0001abf4       0x74 ./lwip/src/core/tcp_out.o
+                0x0001ac00       0x74 ./lwip/src/core/tcp_out.o
  .rodata.tcp_send_fin.str1.4
-                0x0001ac68       0x1a ./lwip/src/core/tcp_out.o
- *fill*         0x0001ac82        0x2 ff
+                0x0001ac74       0x1a ./lwip/src/core/tcp_out.o
+ *fill*         0x0001ac8e        0x2 ff
  .rodata.tcp_enqueue_flags.str1.4
-                0x0001ac84      0x120 ./lwip/src/core/tcp_out.o
+                0x0001ac90      0x120 ./lwip/src/core/tcp_out.o
  .rodata.tcp_output.str1.4
-                0x0001ada4       0x57 ./lwip/src/core/tcp_out.o
- *fill*         0x0001adfb        0x1 ff
+                0x0001adb0       0x57 ./lwip/src/core/tcp_out.o
+ *fill*         0x0001ae07        0x1 ff
  .rodata.tcp_output_segment_busy.str1.4
-                0x0001adfc       0x25 ./lwip/src/core/tcp_out.o
- *fill*         0x0001ae21        0x3 ff
+                0x0001ae08       0x25 ./lwip/src/core/tcp_out.o
+ *fill*         0x0001ae2d        0x3 ff
  .rodata.tcp_output_segment.str1.4
-                0x0001ae24       0x77 ./lwip/src/core/tcp_out.o
- *fill*         0x0001ae9b        0x1 ff
+                0x0001ae30       0x77 ./lwip/src/core/tcp_out.o
+ *fill*         0x0001aea7        0x1 ff
  .rodata.tcp_rexmit_rto_prepare.str1.4
-                0x0001ae9c       0x24 ./lwip/src/core/tcp_out.o
+                0x0001aea8       0x24 ./lwip/src/core/tcp_out.o
  .rodata.tcp_rexmit_rto_commit.str1.4
-                0x0001aec0       0x23 ./lwip/src/core/tcp_out.o
- *fill*         0x0001aee3        0x1 ff
+                0x0001aecc       0x23 ./lwip/src/core/tcp_out.o
+ *fill*         0x0001aeef        0x1 ff
  .rodata.tcp_rexmit_rto.str1.4
-                0x0001aee4       0x1c ./lwip/src/core/tcp_out.o
+                0x0001aef0       0x1c ./lwip/src/core/tcp_out.o
  .rodata.tcp_rexmit.str1.4
-                0x0001af00       0x18 ./lwip/src/core/tcp_out.o
+                0x0001af0c       0x18 ./lwip/src/core/tcp_out.o
  .rodata.tcp_rexmit_fast.str1.4
-                0x0001af18       0x1d ./lwip/src/core/tcp_out.o
- *fill*         0x0001af35        0x3 ff
+                0x0001af24       0x1d ./lwip/src/core/tcp_out.o
+ *fill*         0x0001af41        0x3 ff
  .rodata.tcp_output_alloc_header_common.str1.4
-                0x0001af38       0x2e ./lwip/src/core/tcp_out.o
- *fill*         0x0001af66        0x2 ff
+                0x0001af44       0x2e ./lwip/src/core/tcp_out.o
+ *fill*         0x0001af72        0x2 ff
  .rodata.tcp_output_alloc_header.str1.4
-                0x0001af68       0x25 ./lwip/src/core/tcp_out.o
- *fill*         0x0001af8d        0x3 ff
+                0x0001af74       0x25 ./lwip/src/core/tcp_out.o
+ *fill*         0x0001af99        0x3 ff
  .rodata.tcp_output_fill_options.str1.4
-                0x0001af90       0x26 ./lwip/src/core/tcp_out.o
- *fill*         0x0001afb6        0x2 ff
+                0x0001af9c       0x26 ./lwip/src/core/tcp_out.o
+ *fill*         0x0001afc2        0x2 ff
  .rodata.tcp_output_control_segment.str1.4
-                0x0001afb8       0x29 ./lwip/src/core/tcp_out.o
- *fill*         0x0001afe1        0x3 ff
+                0x0001afc4       0x29 ./lwip/src/core/tcp_out.o
+ *fill*         0x0001afed        0x3 ff
  .rodata.tcp_rst.str1.4
-                0x0001afe4       0x37 ./lwip/src/core/tcp_out.o
- *fill*         0x0001b01b        0x1 ff
+                0x0001aff0       0x37 ./lwip/src/core/tcp_out.o
+ *fill*         0x0001b027        0x1 ff
  .rodata.tcp_send_empty_ack.str1.4
-                0x0001b01c       0x20 ./lwip/src/core/tcp_out.o
+                0x0001b028       0x20 ./lwip/src/core/tcp_out.o
  .rodata.tcp_keepalive.str1.4
-                0x0001b03c       0x1b ./lwip/src/core/tcp_out.o
- *fill*         0x0001b057        0x1 ff
+                0x0001b048       0x1b ./lwip/src/core/tcp_out.o
+ *fill*         0x0001b063        0x1 ff
  .rodata.tcp_zero_window_probe.str1.4
-                0x0001b058       0x23 ./lwip/src/core/tcp_out.o
- *fill*         0x0001b07b        0x1 ff
+                0x0001b064       0x23 ./lwip/src/core/tcp_out.o
+ *fill*         0x0001b087        0x1 ff
  .rodata.lwip_cyclic_timers
-                0x0001b07c       0x38 ./lwip/src/core/timeouts.o
-                0x0001b07c                lwip_cyclic_timers
+                0x0001b088       0x38 ./lwip/src/core/timeouts.o
+                0x0001b088                lwip_cyclic_timers
  .rodata.sys_timeout_abs.str1.4
-                0x0001b0b4       0x3d ./lwip/src/core/timeouts.o
- *fill*         0x0001b0f1        0x3 ff
+                0x0001b0c0       0x3d ./lwip/src/core/timeouts.o
+ *fill*         0x0001b0fd        0x3 ff
  .rodata.sys_timeout.str1.4
-                0x0001b0f4       0x36 ./lwip/src/core/timeouts.o
- *fill*         0x0001b12a        0x2 ff
+                0x0001b100       0x36 ./lwip/src/core/timeouts.o
+ *fill*         0x0001b136        0x2 ff
  .rodata.sys_timeouts_sleeptime.str1.4
-                0x0001b12c       0x12 ./lwip/src/core/timeouts.o
- *fill*         0x0001b13e        0x2 ff
+                0x0001b138       0x12 ./lwip/src/core/timeouts.o
+ *fill*         0x0001b14a        0x2 ff
  .rodata.udp_input_local_match.str1.4
-                0x0001b140       0x49 ./lwip/src/core/udp.o
- *fill*         0x0001b189        0x3 ff
+                0x0001b14c       0x49 ./lwip/src/core/udp.o
+ *fill*         0x0001b195        0x3 ff
  .rodata.udp_input.str1.4
-                0x0001b18c       0x4f ./lwip/src/core/udp.o
- *fill*         0x0001b1db        0x1 ff
+                0x0001b198       0x4f ./lwip/src/core/udp.o
+ *fill*         0x0001b1e7        0x1 ff
  .rodata.udp_send.str1.4
-                0x0001b1dc       0x2f ./lwip/src/core/udp.o
+                0x0001b1e8       0x2f ./lwip/src/core/udp.o
                                  0x33 (size before relaxing)
- *fill*         0x0001b20b        0x1 ff
+ *fill*         0x0001b217        0x1 ff
  .rodata.udp_sendto.str1.4
-                0x0001b20c       0x4f ./lwip/src/core/udp.o
- *fill*         0x0001b25b        0x1 ff
+                0x0001b218       0x4f ./lwip/src/core/udp.o
+ *fill*         0x0001b267        0x1 ff
  .rodata.udp_sendto_if.str1.4
-                0x0001b25c       0x75 ./lwip/src/core/udp.o
- *fill*         0x0001b2d1        0x3 ff
+                0x0001b268       0x75 ./lwip/src/core/udp.o
+ *fill*         0x0001b2dd        0x3 ff
  .rodata.udp_sendto_if_src.str1.4
-                0x0001b2d4       0xda ./lwip/src/core/udp.o
- *fill*         0x0001b3ae        0x2 ff
+                0x0001b2e0       0xda ./lwip/src/core/udp.o
+ *fill*         0x0001b3ba        0x2 ff
  .rodata.udp_bind.str1.4
-                0x0001b3b0       0x16 ./lwip/src/core/udp.o
- *fill*         0x0001b3c6        0x2 ff
+                0x0001b3bc       0x16 ./lwip/src/core/udp.o
+ *fill*         0x0001b3d2        0x2 ff
  .rodata.udp_connect.str1.4
-                0x0001b3c8       0x38 ./lwip/src/core/udp.o
+                0x0001b3d4       0x38 ./lwip/src/core/udp.o
  .rodata.udp_recv.str1.4
-                0x0001b400       0x16 ./lwip/src/core/udp.o
- *fill*         0x0001b416        0x2 ff
+                0x0001b40c       0x16 ./lwip/src/core/udp.o
+ *fill*         0x0001b422        0x2 ff
  .rodata.udp_remove.str1.4
-                0x0001b418       0x18 ./lwip/src/core/udp.o
+                0x0001b424       0x18 ./lwip/src/core/udp.o
  .rodata.mqtt_ringbuf_advance_get_idx.str1.4
-                0x0001b430       0x3d ./lwip/src/apps/mqtt/mqtt.o
- *fill*         0x0001b46d        0x3 ff
+                0x0001b43c       0x3d ./lwip/src/apps/mqtt/mqtt.o
+ *fill*         0x0001b479        0x3 ff
  .rodata.mqtt_output_send.str1.4
-                0x0001b470       0x1f ./lwip/src/apps/mqtt/mqtt.o
- *fill*         0x0001b48f        0x1 ff
+                0x0001b47c       0x1f ./lwip/src/apps/mqtt/mqtt.o
+ *fill*         0x0001b49b        0x1 ff
  .rodata.mqtt_create_request.str1.4
-                0x0001b490       0x24 ./lwip/src/apps/mqtt/mqtt.o
+                0x0001b49c       0x24 ./lwip/src/apps/mqtt/mqtt.o
  .rodata.mqtt_append_request.str1.4
-                0x0001b4b4       0x59 ./lwip/src/apps/mqtt/mqtt.o
- *fill*         0x0001b50d        0x3 ff
+                0x0001b4c0       0x59 ./lwip/src/apps/mqtt/mqtt.o
+ *fill*         0x0001b519        0x3 ff
  .rodata.mqtt_take_request.str1.4
-                0x0001b510       0x20 ./lwip/src/apps/mqtt/mqtt.o
+                0x0001b51c       0x20 ./lwip/src/apps/mqtt/mqtt.o
  .rodata.mqtt_request_time_elapsed.str1.4
-                0x0001b530       0x28 ./lwip/src/apps/mqtt/mqtt.o
+                0x0001b53c       0x28 ./lwip/src/apps/mqtt/mqtt.o
  .rodata.mqtt_clear_requests.str1.4
-                0x0001b558       0x22 ./lwip/src/apps/mqtt/mqtt.o
- *fill*         0x0001b57a        0x2 ff
+                0x0001b564       0x22 ./lwip/src/apps/mqtt/mqtt.o
+ *fill*         0x0001b586        0x2 ff
  .rodata.mqtt_init_requests.str1.4
-                0x0001b57c       0x23 ./lwip/src/apps/mqtt/mqtt.o
- *fill*         0x0001b59f        0x1 ff
+                0x0001b588       0x23 ./lwip/src/apps/mqtt/mqtt.o
+ *fill*         0x0001b5ab        0x1 ff
  .rodata.mqtt_output_check_space.str1.4
-                0x0001b5a0       0x24 ./lwip/src/apps/mqtt/mqtt.o
+                0x0001b5ac       0x24 ./lwip/src/apps/mqtt/mqtt.o
  .rodata.mqtt_close.str1.4
-                0x0001b5c4       0x1b ./lwip/src/apps/mqtt/mqtt.o
- *fill*         0x0001b5df        0x1 ff
+                0x0001b5d0       0x1b ./lwip/src/apps/mqtt/mqtt.o
+ *fill*         0x0001b5eb        0x1 ff
  .rodata.mqtt_cyclic_timer.str1.4
-                0x0001b5e0       0x22 ./lwip/src/apps/mqtt/mqtt.o
- *fill*         0x0001b602        0x2 ff
+                0x0001b5ec       0x22 ./lwip/src/apps/mqtt/mqtt.o
+ *fill*         0x0001b60e        0x2 ff
  .rodata.mqtt_message_received.str1.4
-                0x0001b604       0x3b ./lwip/src/apps/mqtt/mqtt.o
+                0x0001b610       0x3b ./lwip/src/apps/mqtt/mqtt.o
                                  0x3f (size before relaxing)
- *fill*         0x0001b63f        0x1 ff
+ *fill*         0x0001b64b        0x1 ff
  .rodata.mqtt_tcp_recv_cb.str1.4
-                0x0001b640       0x4a ./lwip/src/apps/mqtt/mqtt.o
- *fill*         0x0001b68a        0x2 ff
+                0x0001b64c       0x4a ./lwip/src/apps/mqtt/mqtt.o
+ *fill*         0x0001b696        0x2 ff
  .rodata.mqtt_tcp_err_cb.str1.4
-                0x0001b68c       0x20 ./lwip/src/apps/mqtt/mqtt.o
+                0x0001b698       0x20 ./lwip/src/apps/mqtt/mqtt.o
  .rodata.mqtt_publish.str1.4
-                0x0001b6ac       0xa4 ./lwip/src/apps/mqtt/mqtt.o
+                0x0001b6b8       0xa4 ./lwip/src/apps/mqtt/mqtt.o
  .rodata.mqtt_sub_unsub.str1.4
-                0x0001b750       0xa8 ./lwip/src/apps/mqtt/mqtt.o
+                0x0001b75c       0xa8 ./lwip/src/apps/mqtt/mqtt.o
  .rodata.mqtt_set_inpub_callback.str1.4
-                0x0001b7f8       0x28 ./lwip/src/apps/mqtt/mqtt.o
+                0x0001b804       0x28 ./lwip/src/apps/mqtt/mqtt.o
  .rodata.mqtt_client_connect.str1.4
-                0x0001b820      0x2e1 ./lwip/src/apps/mqtt/mqtt.o
- *fill*         0x0001bb01        0x3 ff
+                0x0001b82c      0x2e1 ./lwip/src/apps/mqtt/mqtt.o
+ *fill*         0x0001bb0d        0x3 ff
  .rodata.netconn_getaddr.str1.4
-                0x0001bb04       0x5e ./lwip/src/api/api_lib.o
+                0x0001bb10       0x5e ./lwip/src/api/api_lib.o
                                  0x62 (size before relaxing)
- *fill*         0x0001bb62        0x2 ff
+ *fill*         0x0001bb6e        0x2 ff
  .rodata.netconn_gethostbyname.str1.4
-                0x0001bb64       0x48 ./lwip/src/api/api_lib.o
+                0x0001bb70       0x48 ./lwip/src/api/api_lib.o
  .rodata.lwip_netconn_do_gethostbyname.str1.4
-                0x0001bbac       0x25 ./lwip/src/api/api_msg.o
- *fill*         0x0001bbd1        0x3 ff
+                0x0001bbb8       0x25 ./lwip/src/api/api_msg.o
+ *fill*         0x0001bbdd        0x3 ff
  .rodata.tcpip_thread.str1.4
-                0x0001bbd4       0x1e ./lwip/src/api/tcpip.o
- *fill*         0x0001bbf2        0x2 ff
+                0x0001bbe0       0x1e ./lwip/src/api/tcpip.o
+ *fill*         0x0001bbfe        0x2 ff
  .rodata.tcpip_inpkt.str1.4
-                0x0001bbf4        0xd ./lwip/src/api/tcpip.o
- *fill*         0x0001bc01        0x3 ff
+                0x0001bc00        0xd ./lwip/src/api/tcpip.o
+ *fill*         0x0001bc0d        0x3 ff
  .rodata.tcpip_init.str1.4
-                0x0001bc04       0x55 ./lwip/src/api/tcpip.o
- *fill*         0x0001bc59        0x3 ff
+                0x0001bc10       0x55 ./lwip/src/api/tcpip.o
+ *fill*         0x0001bc65        0x3 ff
  .rodata.ethernetif_phy_init.str1.4
-                0x0001bc5c       0x8f ./lwip/port/enet_ethernetif.o
+                0x0001bc68       0x8f ./lwip/port/enet_ethernetif.o
                                  0x93 (size before relaxing)
  .rodata.ethernetif_input.str1.4
-                0x0001bceb        0xe ./lwip/port/enet_ethernetif.o
- *fill*         0x0001bceb        0x1 ff
+                0x0001bcf7        0xe ./lwip/port/enet_ethernetif.o
+ *fill*         0x0001bcf7        0x1 ff
  .rodata.ethernetif_init.str1.4
-                0x0001bcec       0x45 ./lwip/port/enet_ethernetif.o
- *fill*         0x0001bd31        0x3 ff
+                0x0001bcf8       0x45 ./lwip/port/enet_ethernetif.o
+ *fill*         0x0001bd3d        0x3 ff
  .rodata.ethernetif_enet_init.str1.4
-                0x0001bd34       0x1b ./lwip/port/enet_ethernetif_kinetis.o
- *fill*         0x0001bd4f        0x1 ff
+                0x0001bd40       0x1b ./lwip/port/enet_ethernetif_kinetis.o
+ *fill*         0x0001bd5b        0x1 ff
  .rodata.ethernetif_read_frame.str1.4
-                0x0001bd50       0xb5 ./lwip/port/enet_ethernetif_kinetis.o
- *fill*         0x0001be05        0x3 ff
+                0x0001bd5c       0xb5 ./lwip/port/enet_ethernetif_kinetis.o
+ *fill*         0x0001be11        0x3 ff
  .rodata.ethernetif_linkoutput.str1.4
-                0x0001be08       0x1b ./lwip/port/enet_ethernetif_kinetis.o
- *fill*         0x0001be23        0x1 ff
+                0x0001be14       0x1b ./lwip/port/enet_ethernetif_kinetis.o
+ *fill*         0x0001be2f        0x1 ff
  .rodata.enetBases.9833
-                0x0001be24        0x4 ./lwip/port/enet_ethernetif_kinetis.o
+                0x0001be30        0x4 ./lwip/port/enet_ethernetif_kinetis.o
  .rodata.enetRxIrqId.9835
-                0x0001be28        0x1 ./lwip/port/enet_ethernetif_kinetis.o
- *fill*         0x0001be29        0x3 ff
+                0x0001be34        0x1 ./lwip/port/enet_ethernetif_kinetis.o
+ *fill*         0x0001be35        0x3 ff
  .rodata.enetTxIrqId.9834
-                0x0001be2c        0x1 ./lwip/port/enet_ethernetif_kinetis.o
- *fill*         0x0001be2d        0x3 ff
+                0x0001be38        0x1 ./lwip/port/enet_ethernetif_kinetis.o
+ *fill*         0x0001be39        0x3 ff
  .rodata.sys_assert.str1.4
-                0x0001be30        0x3 ./lwip/port/sys_arch.o
- *fill*         0x0001be33        0x1 ff
+                0x0001be3c        0x3 ./lwip/port/sys_arch.o
+ *fill*         0x0001be3f        0x1 ff
  .rodata.sys_thread_new.str1.4
-                0x0001be34       0x29 ./lwip/port/sys_arch.o
- *fill*         0x0001be5d        0x3 ff
+                0x0001be40       0x29 ./lwip/port/sys_arch.o
+ *fill*         0x0001be69        0x3 ff
  .rodata.sys_check_core_locking.str1.4
-                0x0001be60       0x4a ./lwip/port/sys_arch.o
- *fill*         0x0001beaa        0x2 ff
+                0x0001be6c       0x4a ./lwip/port/sys_arch.o
+ *fill*         0x0001beb6        0x2 ff
  .rodata.xTimerCreateTimerTask.str1.4
-                0x0001beac        0x8 ./freertos/freertos_kernel/timers.o
+                0x0001beb8        0x8 ./freertos/freertos_kernel/timers.o
  .rodata.prvCheckForValidListAndQueue.str1.4
-                0x0001beb4        0x5 ./freertos/freertos_kernel/timers.o
- *fill*         0x0001beb9        0x3 ff
+                0x0001bec0        0x5 ./freertos/freertos_kernel/timers.o
+ *fill*         0x0001bec5        0x3 ff
  .rodata.CLOCK_GetMcgExtClkFreq.str1.4
-                0x0001bebc       0x4e ./drivers/fsl_clock.o
- *fill*         0x0001bf0a        0x2 ff
+                0x0001bec8       0x4e ./drivers/fsl_clock.o
+ *fill*         0x0001bf16        0x2 ff
  .rodata.CLOCK_GetOsc0ErClkFreq.str1.4
-                0x0001bf0c       0x1f ./drivers/fsl_clock.o
- *fill*         0x0001bf2b        0x1 ff
+                0x0001bf18       0x1f ./drivers/fsl_clock.o
+ *fill*         0x0001bf37        0x1 ff
  .rodata.CLOCK_GetEr32kClkFreq.str1.4
-                0x0001bf2c       0x20 ./drivers/fsl_clock.o
+                0x0001bf38       0x20 ./drivers/fsl_clock.o
  .rodata.CLOCK_GetPll0Freq.str1.4
-                0x0001bf4c       0x1e ./drivers/fsl_clock.o
- *fill*         0x0001bf6a        0x2 ff
+                0x0001bf58       0x1e ./drivers/fsl_clock.o
+ *fill*         0x0001bf76        0x2 ff
  .rodata.CLOCK_EnablePll0.str1.4
-                0x0001bf6c       0x1b ./drivers/fsl_clock.o
- *fill*         0x0001bf87        0x1 ff
+                0x0001bf78       0x1b ./drivers/fsl_clock.o
+ *fill*         0x0001bf93        0x1 ff
  .rodata.CLOCK_SetPbeMode.str1.4
-                0x0001bf88       0x1b ./drivers/fsl_clock.o
- *fill*         0x0001bfa3        0x1 ff
+                0x0001bf94       0x1b ./drivers/fsl_clock.o
+ *fill*         0x0001bfaf        0x1 ff
  .rodata.CLOCK_BootToPeeMode.str1.4
-                0x0001bfa4       0x1b ./drivers/fsl_clock.o
- *fill*         0x0001bfbf        0x1 ff
+                0x0001bfb0       0x1b ./drivers/fsl_clock.o
+ *fill*         0x0001bfcb        0x1 ff
  .rodata.fllFactorTable.7905
-                0x0001bfc0       0x10 ./drivers/fsl_clock.o
+                0x0001bfcc       0x10 ./drivers/fsl_clock.o
  .rodata.s_enetClock
-                0x0001bfd0        0x4 ./drivers/fsl_enet.o
-                0x0001bfd0                s_enetClock
+                0x0001bfdc        0x4 ./drivers/fsl_enet.o
+                0x0001bfdc                s_enetClock
  .rodata.ENET_GetInstance.str1.4
-                0x0001bfd4       0x35 ./drivers/fsl_enet.o
- *fill*         0x0001c009        0x3 ff
+                0x0001bfe0       0x35 ./drivers/fsl_enet.o
+ *fill*         0x0001c015        0x3 ff
  .rodata.ENET_GetDefaultConfig.str1.4
-                0x0001c00c       0x21 ./drivers/fsl_enet.o
- *fill*         0x0001c02d        0x3 ff
+                0x0001c018       0x21 ./drivers/fsl_enet.o
+ *fill*         0x0001c039        0x3 ff
  .rodata.ENET_Up.str1.4
-                0x0001c030       0xd9 ./drivers/fsl_enet.o
- *fill*         0x0001c109        0x3 ff
+                0x0001c03c       0xd9 ./drivers/fsl_enet.o
+ *fill*         0x0001c115        0x3 ff
  .rodata.ENET_SetCallback.str1.4
-                0x0001c10c       0x21 ./drivers/fsl_enet.o
- *fill*         0x0001c12d        0x3 ff
+                0x0001c118       0x21 ./drivers/fsl_enet.o
+ *fill*         0x0001c139        0x3 ff
  .rodata.ENET_SetHandler.str1.4
-                0x0001c130       0x59 ./drivers/fsl_enet.o
- *fill*         0x0001c189        0x3 ff
+                0x0001c13c       0x59 ./drivers/fsl_enet.o
+ *fill*         0x0001c195        0x3 ff
  .rodata.ENET_SetTxBufferDescriptors.str1.4
-                0x0001c18c       0x4b ./drivers/fsl_enet.o
- *fill*         0x0001c1d7        0x1 ff
+                0x0001c198       0x4b ./drivers/fsl_enet.o
+ *fill*         0x0001c1e3        0x1 ff
  .rodata.ENET_SetRxBufferDescriptors.str1.4
-                0x0001c1d8       0x91 ./drivers/fsl_enet.o
- *fill*         0x0001c269        0x3 ff
+                0x0001c1e4       0x91 ./drivers/fsl_enet.o
+ *fill*         0x0001c275        0x3 ff
  .rodata.ENET_ActiveSend.str1.4
-                0x0001c26c       0x3b ./drivers/fsl_enet.o
- *fill*         0x0001c2a7        0x1 ff
+                0x0001c278       0x3b ./drivers/fsl_enet.o
+ *fill*         0x0001c2b3        0x1 ff
  .rodata.ENET_SetSMI.str1.4
-                0x0001c2a8       0x43 ./drivers/fsl_enet.o
- *fill*         0x0001c2eb        0x1 ff
+                0x0001c2b4       0x43 ./drivers/fsl_enet.o
+ *fill*         0x0001c2f7        0x1 ff
  .rodata.ENET_GetRxFrameSize.str1.4
-                0x0001c2ec       0x84 ./drivers/fsl_enet.o
+                0x0001c2f8       0x84 ./drivers/fsl_enet.o
  .rodata.ENET_SendFrame.str1.4
-                0x0001c370       0x80 ./drivers/fsl_enet.o
+                0x0001c37c       0x80 ./drivers/fsl_enet.o
  .rodata.ENET_ReclaimTxDescriptor.str1.4
-                0x0001c3f0       0x3c ./drivers/fsl_enet.o
+                0x0001c3fc       0x3c ./drivers/fsl_enet.o
  .rodata.ENET_GetRxBuffer.str1.4
-                0x0001c42c       0x9d ./drivers/fsl_enet.o
- *fill*         0x0001c4c9        0x3 ff
+                0x0001c438       0x9d ./drivers/fsl_enet.o
+ *fill*         0x0001c4d5        0x3 ff
  .rodata.ENET_ReleaseRxBuffer.str1.4
-                0x0001c4cc       0x60 ./drivers/fsl_enet.o
+                0x0001c4d8       0x60 ./drivers/fsl_enet.o
  .rodata.ENET_TransmitIRQHandler.str1.4
-                0x0001c52c       0x22 ./drivers/fsl_enet.o
- *fill*         0x0001c54e        0x2 ff
+                0x0001c538       0x22 ./drivers/fsl_enet.o
+ *fill*         0x0001c55a        0x2 ff
  .rodata.ENET_ReceiveIRQHandler.str1.4
-                0x0001c550       0x22 ./drivers/fsl_enet.o
- *fill*         0x0001c572        0x2 ff
+                0x0001c55c       0x22 ./drivers/fsl_enet.o
+ *fill*         0x0001c57e        0x2 ff
  .rodata.ENET_ErrorIRQHandler.str1.4
-                0x0001c574       0x22 ./drivers/fsl_enet.o
- *fill*         0x0001c596        0x2 ff
+                0x0001c580       0x22 ./drivers/fsl_enet.o
+ *fill*         0x0001c5a2        0x2 ff
  .rodata.mcgConfig_BOARD_BootClockRUN
-                0x0001c598        0xb ./board/clock_config.o
-                0x0001c598                mcgConfig_BOARD_BootClockRUN
- *fill*         0x0001c5a3        0x1 ff
+                0x0001c5a4        0xb ./board/clock_config.o
+                0x0001c5a4                mcgConfig_BOARD_BootClockRUN
+ *fill*         0x0001c5af        0x1 ff
  .rodata.simConfig_BOARD_BootClockRUN
-                0x0001c5a4        0x8 ./board/clock_config.o
-                0x0001c5a4                simConfig_BOARD_BootClockRUN
+                0x0001c5b0        0x8 ./board/clock_config.o
+                0x0001c5b0                simConfig_BOARD_BootClockRUN
  .rodata.oscConfig_BOARD_BootClockRUN
-                0x0001c5ac        0x8 ./board/clock_config.o
-                0x0001c5ac                oscConfig_BOARD_BootClockRUN
+                0x0001c5b8        0x8 ./board/clock_config.o
+                0x0001c5b8                oscConfig_BOARD_BootClockRUN
  .rodata.PORT_SetPinConfig.str1.4
-                0x0001c5b4       0x54 ./board/pin_mux.o
+                0x0001c5c0       0x54 ./board/pin_mux.o
  .rodata.__num_Ciob_streams
-                0x0001c608        0x4 c:/nxp/mcuxpressoide_11.1.0_3209/ide/plugins/com.nxp.mcuxpresso.tools.win32_11.1.0.201909161352/tools/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libcr_semihost_nf.a(__ciob.o)
-                0x0001c608                __num_Ciob_streams
+                0x0001c614        0x4 c:/nxp/mcuxpressoide_11.1.0_3209/ide/plugins/com.nxp.mcuxpresso.tools.win32_11.1.0.201909161352/tools/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libcr_semihost_nf.a(__ciob.o)
+                0x0001c614                __num_Ciob_streams
  .rodata._Csys_alloc.str1.1
-                0x0001c60c       0x18 c:/nxp/mcuxpressoide_11.1.0_3209/ide/plugins/com.nxp.mcuxpresso.tools.win32_11.1.0.201909161352/tools/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libcr_c.a(alloc.o)
+                0x0001c618       0x18 c:/nxp/mcuxpressoide_11.1.0_3209/ide/plugins/com.nxp.mcuxpresso.tools.win32_11.1.0.201909161352/tools/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libcr_c.a(alloc.o)
  .rodata.__ctype
-                0x0001c624      0x180 c:/nxp/mcuxpressoide_11.1.0_3209/ide/plugins/com.nxp.mcuxpresso.tools.win32_11.1.0.201909161352/tools/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libcr_c.a(ctype.o)
-                0x0001c624                __ctype
+                0x0001c630      0x180 c:/nxp/mcuxpressoide_11.1.0_3209/ide/plugins/com.nxp.mcuxpresso.tools.win32_11.1.0.201909161352/tools/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libcr_c.a(ctype.o)
+                0x0001c630                __ctype
  .rodata._initio.str1.1
-                0x0001c7a4        0x4 c:/nxp/mcuxpressoide_11.1.0_3209/ide/plugins/com.nxp.mcuxpresso.tools.win32_11.1.0.201909161352/tools/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libcr_c.a(initio.o)
+                0x0001c7b0        0x4 c:/nxp/mcuxpressoide_11.1.0_3209/ide/plugins/com.nxp.mcuxpresso.tools.win32_11.1.0.201909161352/tools/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libcr_c.a(initio.o)
  .rodata.__vfprintf.str1.1
-                0x0001c7a8       0x37 c:/nxp/mcuxpressoide_11.1.0_3209/ide/plugins/com.nxp.mcuxpresso.tools.win32_11.1.0.201909161352/tools/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libcr_c.a(printf.o)
+                0x0001c7b4       0x37 c:/nxp/mcuxpressoide_11.1.0_3209/ide/plugins/com.nxp.mcuxpresso.tools.win32_11.1.0.201909161352/tools/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libcr_c.a(printf.o)
                                  0x38 (size before relaxing)
-                0x0001c7e0                . = ALIGN (0x8)
- *fill*         0x0001c7df        0x1 ff
+                0x0001c7f0                . = ALIGN (0x8)
+ *fill*         0x0001c7eb        0x5 ff
 
-.glue_7         0x0001c7e0        0x0
- .glue_7        0x0001c7e0        0x0 linker stubs
+.glue_7         0x0001c7f0        0x0
+ .glue_7        0x0001c7f0        0x0 linker stubs
 
-.glue_7t        0x0001c7e0        0x0
- .glue_7t       0x0001c7e0        0x0 linker stubs
+.glue_7t        0x0001c7f0        0x0
+ .glue_7t       0x0001c7f0        0x0 linker stubs
 
-.vfp11_veneer   0x0001c7e0        0x0
- .vfp11_veneer  0x0001c7e0        0x0 linker stubs
+.vfp11_veneer   0x0001c7f0        0x0
+ .vfp11_veneer  0x0001c7f0        0x0 linker stubs
 
-.v4_bx          0x0001c7e0        0x0
- .v4_bx         0x0001c7e0        0x0 linker stubs
+.v4_bx          0x0001c7f0        0x0
+ .v4_bx         0x0001c7f0        0x0 linker stubs
 
-.iplt           0x0001c7e0        0x0
- .iplt          0x0001c7e0        0x0 ./utilities/fsl_assert.o
+.iplt           0x0001c7f0        0x0
+ .iplt          0x0001c7f0        0x0 ./utilities/fsl_assert.o
 
-.rel.dyn        0x0001c7e0        0x0
- .rel.iplt      0x0001c7e0        0x0 ./utilities/fsl_assert.o
+.rel.dyn        0x0001c7f0        0x0
+ .rel.iplt      0x0001c7f0        0x0 ./utilities/fsl_assert.o
 
 .ARM.extab
  *(SORT_BY_ALIGNMENT(.ARM.extab*) SORT_BY_ALIGNMENT(.gnu.linkonce.armextab.*))
-                0x0001c7e0                __exidx_start = .
+                0x0001c7f0                __exidx_start = .
 
 .ARM.exidx
  *(SORT_BY_ALIGNMENT(.ARM.exidx*) SORT_BY_ALIGNMENT(.gnu.linkonce.armexidx.*))
-                0x0001c7e0                __exidx_end = .
-                0x0001c7e0                _etext = .
+                0x0001c7f0                __exidx_end = .
+                0x0001c7f0                _etext = .
 
 .m_usb_data
  *(SORT_BY_ALIGNMENT(m_usb_bdt))
 
-.data_RAM2      0x1fff0000        0x0 load address 0x0001c7e0
+.data_RAM2      0x1fff0000        0x0 load address 0x0001c7f0
  FILL mask 0xff
                 [!provide]                PROVIDE (__start_data_RAM2 = .)
                 [!provide]                PROVIDE (__start_data_SRAM_LOWER = .)
@@ -16784,7 +16785,7 @@ END GROUP
                 [!provide]                PROVIDE (__end_data_RAM2 = .)
                 [!provide]                PROVIDE (__end_data_SRAM_LOWER = .)
 
-.data_RAM3      0x14000000        0x0 load address 0x0001c7e0
+.data_RAM3      0x14000000        0x0 load address 0x0001c7f0
  FILL mask 0xff
                 [!provide]                PROVIDE (__start_data_RAM3 = .)
                 [!provide]                PROVIDE (__start_data_FLEX_RAM = .)
@@ -16805,7 +16806,7 @@ END GROUP
                 0x20000000                . = ALIGN (0x8)
                 0x20000000                _end_uninit_RESERVED = .
 
-.data           0x20000000       0x48 load address 0x0001c7e0
+.data           0x20000000       0x48 load address 0x0001c7f0
  FILL mask 0xff
                 0x20000000                _data = .
                 [!provide]                PROVIDE (__start_data_RAM = .)
@@ -16849,7 +16850,7 @@ END GROUP
                 [!provide]                PROVIDE (__end_data_RAM = .)
                 [!provide]                PROVIDE (__end_data_SRAM_UPPER = .)
 
-.igot.plt       0x20000048        0x0 load address 0x0001c828
+.igot.plt       0x20000048        0x0 load address 0x0001c838
  .igot.plt      0x20000048        0x0 ./utilities/fsl_assert.o
 
 .bss_RAM2       0x1fff0000        0x0
@@ -17267,8 +17268,8 @@ END GROUP
                 0x2002fc18                . = ALIGN (0x8)
                 0x20030000                _vStackTop = (. + _StackSize)
                 0x00000000                _image_start = LOADADDR (.text)
-                0x0001c828                _image_end = (LOADADDR (.data) + SIZEOF (.data))
-                0x0001c828                _image_size = (_image_end - _image_start)
+                0x0001c838                _image_end = (LOADADDR (.data) + SIZEOF (.data))
+                0x0001c838                _image_size = (_image_end - _image_start)
 OUTPUT(rse-practice-1.axf elf32-littlearm)
 
 .debug_info     0x00000000    0x3d593
@@ -17548,7 +17549,7 @@ OUTPUT(rse-practice-1.axf elf32-littlearm)
  .debug_ranges  0x000021b8       0x48 ./board/clock_config.o
  .debug_ranges  0x00002200       0x30 ./board/pin_mux.o
 
-.debug_macro    0x00000000    0x1f861
+.debug_macro    0x00000000    0x1f86d
  .debug_macro   0x00000000      0x1a2 ./utilities/fsl_assert.o
  .debug_macro   0x000001a2      0xaf0 ./utilities/fsl_assert.o
  .debug_macro   0x00000c92       0x10 ./utilities/fsl_assert.o
@@ -17581,154 +17582,154 @@ OUTPUT(rse-practice-1.axf elf32-littlearm)
  .debug_macro   0x00012b7b       0xd2 ./utilities/fsl_assert.o
  .debug_macro   0x00012c4d       0x1c ./utilities/fsl_assert.o
  .debug_macro   0x00012c69       0x29 ./startup/startup_mk64f12.o
- .debug_macro   0x00012c92      0x5ae ./source/lwip_mqtt_freertos.o
- .debug_macro   0x00013240      0x1aa ./source/lwip_mqtt_freertos.o
- .debug_macro   0x000133ea       0x16 ./source/lwip_mqtt_freertos.o
- .debug_macro   0x00013400       0x2e ./source/lwip_mqtt_freertos.o
- .debug_macro   0x0001342e       0x2e ./source/lwip_mqtt_freertos.o
- .debug_macro   0x0001345c       0x10 ./source/lwip_mqtt_freertos.o
- .debug_macro   0x0001346c       0x1d ./source/lwip_mqtt_freertos.o
- .debug_macro   0x00013489       0x7c ./source/lwip_mqtt_freertos.o
- .debug_macro   0x00013505       0x19 ./source/lwip_mqtt_freertos.o
- .debug_macro   0x0001351e       0x7c ./source/lwip_mqtt_freertos.o
- .debug_macro   0x0001359a       0x82 ./source/lwip_mqtt_freertos.o
- .debug_macro   0x0001361c       0x6c ./source/lwip_mqtt_freertos.o
- .debug_macro   0x00013688      0x6fb ./source/lwip_mqtt_freertos.o
- .debug_macro   0x00013d83       0x1c ./source/lwip_mqtt_freertos.o
- .debug_macro   0x00013d9f       0x16 ./source/lwip_mqtt_freertos.o
- .debug_macro   0x00013db5       0x16 ./source/lwip_mqtt_freertos.o
- .debug_macro   0x00013dcb      0x1a4 ./source/lwip_mqtt_freertos.o
- .debug_macro   0x00013f6f       0xb2 ./source/lwip_mqtt_freertos.o
- .debug_macro   0x00014021       0xb3 ./source/lwip_mqtt_freertos.o
- .debug_macro   0x000140d4       0x6a ./source/lwip_mqtt_freertos.o
- .debug_macro   0x0001413e      0x1c3 ./source/lwip_mqtt_freertos.o
- .debug_macro   0x00014301      0x169 ./source/lwip_mqtt_freertos.o
- .debug_macro   0x0001446a       0x3a ./source/lwip_mqtt_freertos.o
- .debug_macro   0x000144a4       0x16 ./source/lwip_mqtt_freertos.o
- .debug_macro   0x000144ba       0x73 ./source/lwip_mqtt_freertos.o
- .debug_macro   0x0001452d      0x120 ./source/lwip_mqtt_freertos.o
- .debug_macro   0x0001464d       0x2e ./source/lwip_mqtt_freertos.o
- .debug_macro   0x0001467b       0x1e ./source/lwip_mqtt_freertos.o
- .debug_macro   0x00014699       0x10 ./source/lwip_mqtt_freertos.o
- .debug_macro   0x000146a9       0x10 ./source/lwip_mqtt_freertos.o
- .debug_macro   0x000146b9       0x10 ./source/lwip_mqtt_freertos.o
- .debug_macro   0x000146c9       0x3f ./source/lwip_mqtt_freertos.o
- .debug_macro   0x00014708       0x25 ./source/lwip_mqtt_freertos.o
- .debug_macro   0x0001472d       0x22 ./source/lwip_mqtt_freertos.o
- .debug_macro   0x0001474f      0x15b ./source/lwip_mqtt_freertos.o
- .debug_macro   0x000148aa      0x13d ./source/lwip_mqtt_freertos.o
- .debug_macro   0x000149e7       0xa0 ./source/lwip_mqtt_freertos.o
- .debug_macro   0x00014a87       0x28 ./source/lwip_mqtt_freertos.o
- .debug_macro   0x00014aaf       0x2e ./source/lwip_mqtt_freertos.o
- .debug_macro   0x00014add       0xea ./source/lwip_mqtt_freertos.o
- .debug_macro   0x00014bc7       0x10 ./source/lwip_mqtt_freertos.o
- .debug_macro   0x00014bd7       0x4d ./source/lwip_mqtt_freertos.o
- .debug_macro   0x00014c24       0x46 ./source/lwip_mqtt_freertos.o
- .debug_macro   0x00014c6a       0x22 ./source/lwip_mqtt_freertos.o
- .debug_macro   0x00014c8c       0x16 ./source/lwip_mqtt_freertos.o
- .debug_macro   0x00014ca2       0x46 ./source/lwip_mqtt_freertos.o
- .debug_macro   0x00014ce8       0x29 ./source/lwip_mqtt_freertos.o
- .debug_macro   0x00014d11      0x149 ./source/lwip_mqtt_freertos.o
- .debug_macro   0x00014e5a      0x320 ./source/lwip_mqtt_freertos.o
- .debug_macro   0x0001517a      0x45a ./source/lwip_mqtt_freertos.o
- .debug_macro   0x000155d4       0xa4 ./source/lwip_mqtt_freertos.o
- .debug_macro   0x00015678       0x16 ./source/lwip_mqtt_freertos.o
- .debug_macro   0x0001568e       0x4c ./source/lwip_mqtt_freertos.o
- .debug_macro   0x000156da       0x2a ./source/lwip_mqtt_freertos.o
- .debug_macro   0x00015704       0x5d ./source/lwip_mqtt_freertos.o
- .debug_macro   0x00015761      0x155 ./source/lwip_mqtt_freertos.o
- .debug_macro   0x000158b6       0x10 ./source/lwip_mqtt_freertos.o
- .debug_macro   0x000158c6       0xd0 ./source/lwip_mqtt_freertos.o
- .debug_macro   0x00015996       0x4c ./source/lwip_mqtt_freertos.o
- .debug_macro   0x000159e2       0x10 ./source/lwip_mqtt_freertos.o
- .debug_macro   0x000159f2       0x10 ./source/lwip_mqtt_freertos.o
- .debug_macro   0x00015a02       0x58 ./source/lwip_mqtt_freertos.o
- .debug_macro   0x00015a5a      0x114 ./source/lwip_mqtt_id_sim.o
- .debug_macro   0x00015b6e       0x11 ./source/semihost_hardfault.o
- .debug_macro   0x00015b7f      0x11c ./phy/fsl_phyksz8081.o
- .debug_macro   0x00015c9b      0x115 ./mdio/fsl_enet_mdio.o
- .debug_macro   0x00015db0       0xca ./mdio/fsl_enet_mdio.o
- .debug_macro   0x00015e7a      0x398 ./lwip/src/netif/ethernet.o
- .debug_macro   0x00016212       0x3b ./lwip/src/netif/ethernet.o
- .debug_macro   0x0001624d      0x385 ./lwip/src/core/ipv4/acd.o
- .debug_macro   0x000165d2      0x43d ./lwip/src/core/ipv4/dhcp.o
- .debug_macro   0x00016a0f       0x2e ./lwip/src/core/ipv4/dhcp.o
- .debug_macro   0x00016a3d      0x40d ./lwip/src/core/ipv4/etharp.o
- .debug_macro   0x00016e4a      0x1bd ./lwip/src/core/ipv4/etharp.o
- .debug_macro   0x00017007      0x373 ./lwip/src/core/ipv4/icmp.o
- .debug_macro   0x0001737a       0x70 ./lwip/src/core/ipv4/icmp.o
- .debug_macro   0x000173ea       0x1c ./lwip/src/core/ipv4/icmp.o
- .debug_macro   0x00017406      0x401 ./lwip/src/core/ipv4/ip4.o
- .debug_macro   0x00017807       0x16 ./lwip/src/core/ipv4/ip4.o
- .debug_macro   0x0001781d       0x47 ./lwip/src/core/ipv4/ip4.o
- .debug_macro   0x00017864       0x2e ./lwip/src/core/ipv4/ip4.o
- .debug_macro   0x00017892       0xf2 ./lwip/src/core/ipv4/ip4.o
- .debug_macro   0x00017984       0x7c ./lwip/src/core/ipv4/ip4.o
- .debug_macro   0x00017a00      0x1de ./lwip/src/core/ipv4/ip4.o
- .debug_macro   0x00017bde      0x305 ./lwip/src/core/ipv4/ip4_addr.o
- .debug_macro   0x00017ee3      0x39a ./lwip/src/core/ipv4/ip4_frag.o
- .debug_macro   0x0001827d       0x10 ./lwip/src/core/ipv4/ip4_frag.o
- .debug_macro   0x0001828d      0x263 ./lwip/src/core/def.o
- .debug_macro   0x000184f0      0x3ce ./lwip/src/core/dns.o
- .debug_macro   0x000188be      0x108 ./lwip/src/core/dns.o
- .debug_macro   0x000189c6      0x2bd ./lwip/src/core/inet_chksum.o
- .debug_macro   0x00018c83       0x16 ./lwip/src/core/inet_chksum.o
- .debug_macro   0x00018c99      0x485 ./lwip/src/core/init.o
- .debug_macro   0x0001911e       0x5e ./lwip/src/core/init.o
- .debug_macro   0x0001917c       0x40 ./lwip/src/core/init.o
- .debug_macro   0x000191bc      0x345 ./lwip/src/core/ip.o
- .debug_macro   0x00019501      0x367 ./lwip/src/core/mem.o
- .debug_macro   0x00019868      0x4d9 ./lwip/src/core/memp.o
- .debug_macro   0x00019d41      0x149 ./lwip/src/core/memp.o
- .debug_macro   0x00019e8a       0x41 ./lwip/src/core/memp.o
- .debug_macro   0x00019ecb      0x122 ./lwip/src/core/memp.o
- .debug_macro   0x00019fed      0x126 ./lwip/src/core/memp.o
- .debug_macro   0x0001a113       0x24 ./lwip/src/core/memp.o
- .debug_macro   0x0001a137       0xaa ./lwip/src/core/memp.o
- .debug_macro   0x0001a1e1      0x458 ./lwip/src/core/netif.o
- .debug_macro   0x0001a639      0x32f ./lwip/src/core/pbuf.o
- .debug_macro   0x0001a968      0x361 ./lwip/src/core/raw.o
- .debug_macro   0x0001acc9      0x276 ./lwip/src/core/sys.o
- .debug_macro   0x0001af3f      0x3ba ./lwip/src/core/tcp.o
- .debug_macro   0x0001b2f9      0x3a7 ./lwip/src/core/tcp_in.o
- .debug_macro   0x0001b6a0      0x3b5 ./lwip/src/core/tcp_out.o
- .debug_macro   0x0001ba55      0x488 ./lwip/src/core/timeouts.o
- .debug_macro   0x0001bedd       0x10 ./lwip/src/core/timeouts.o
- .debug_macro   0x0001beed      0x407 ./lwip/src/core/udp.o
- .debug_macro   0x0001c2f4      0x425 ./lwip/src/apps/mqtt/mqtt.o
- .debug_macro   0x0001c719       0x28 ./lwip/src/apps/mqtt/mqtt.o
- .debug_macro   0x0001c741      0x11c ./lwip/src/apps/mqtt/mqtt.o
- .debug_macro   0x0001c85d      0x45d ./lwip/src/api/api_lib.o
- .debug_macro   0x0001ccba      0x439 ./lwip/src/api/api_msg.o
- .debug_macro   0x0001d0f3      0x458 ./lwip/src/api/netifapi.o
- .debug_macro   0x0001d54b      0x3e0 ./lwip/src/api/tcpip.o
- .debug_macro   0x0001d92b      0x3eb ./lwip/port/enet_ethernetif.o
- .debug_macro   0x0001dd16       0xba ./lwip/port/enet_ethernetif.o
- .debug_macro   0x0001ddd0       0x97 ./lwip/port/enet_ethernetif.o
- .debug_macro   0x0001de67      0x3f6 ./lwip/port/enet_ethernetif_kinetis.o
- .debug_macro   0x0001e25d      0x336 ./lwip/port/sys_arch.o
- .debug_macro   0x0001e593       0x66 ./lwip/port/sys_arch.o
- .debug_macro   0x0001e5f9       0xd3 ./freertos/freertos_kernel/portable/MemMang/heap_3.o
- .debug_macro   0x0001e6cc      0x179 ./freertos/freertos_kernel/portable/GCC/ARM_CM4F/port.o
- .debug_macro   0x0001e845       0x16 ./freertos/freertos_kernel/portable/GCC/ARM_CM4F/port.o
- .debug_macro   0x0001e85b      0x113 ./freertos/freertos_kernel/event_groups.o
- .debug_macro   0x0001e96e       0x91 ./freertos/freertos_kernel/event_groups.o
- .debug_macro   0x0001e9ff       0xb8 ./freertos/freertos_kernel/list.o
- .debug_macro   0x0001eab7      0x125 ./freertos/freertos_kernel/queue.o
- .debug_macro   0x0001ebdc      0x1a5 ./freertos/freertos_kernel/tasks.o
- .debug_macro   0x0001ed81       0x10 ./freertos/freertos_kernel/tasks.o
- .debug_macro   0x0001ed91       0x16 ./freertos/freertos_kernel/tasks.o
- .debug_macro   0x0001eda7      0x10d ./freertos/freertos_kernel/timers.o
- .debug_macro   0x0001eeb4      0x1ba ./drivers/fsl_clock.o
- .debug_macro   0x0001f06e      0x121 ./drivers/fsl_enet.o
- .debug_macro   0x0001f18f      0x104 ./drivers/fsl_sim.o
- .debug_macro   0x0001f293      0x109 ./drivers/fsl_uart.o
- .debug_macro   0x0001f39c       0x10 ./drivers/fsl_uart.o
- .debug_macro   0x0001f3ac       0x98 ./device/system_MK64F12.o
- .debug_macro   0x0001f444      0x1d2 ./board/board.o
- .debug_macro   0x0001f616       0x16 ./board/board.o
- .debug_macro   0x0001f62c      0x135 ./board/clock_config.o
- .debug_macro   0x0001f761      0x100 ./board/pin_mux.o
+ .debug_macro   0x00012c92      0x5ba ./source/lwip_mqtt_freertos.o
+ .debug_macro   0x0001324c      0x1aa ./source/lwip_mqtt_freertos.o
+ .debug_macro   0x000133f6       0x16 ./source/lwip_mqtt_freertos.o
+ .debug_macro   0x0001340c       0x2e ./source/lwip_mqtt_freertos.o
+ .debug_macro   0x0001343a       0x2e ./source/lwip_mqtt_freertos.o
+ .debug_macro   0x00013468       0x10 ./source/lwip_mqtt_freertos.o
+ .debug_macro   0x00013478       0x1d ./source/lwip_mqtt_freertos.o
+ .debug_macro   0x00013495       0x7c ./source/lwip_mqtt_freertos.o
+ .debug_macro   0x00013511       0x19 ./source/lwip_mqtt_freertos.o
+ .debug_macro   0x0001352a       0x7c ./source/lwip_mqtt_freertos.o
+ .debug_macro   0x000135a6       0x82 ./source/lwip_mqtt_freertos.o
+ .debug_macro   0x00013628       0x6c ./source/lwip_mqtt_freertos.o
+ .debug_macro   0x00013694      0x6fb ./source/lwip_mqtt_freertos.o
+ .debug_macro   0x00013d8f       0x1c ./source/lwip_mqtt_freertos.o
+ .debug_macro   0x00013dab       0x16 ./source/lwip_mqtt_freertos.o
+ .debug_macro   0x00013dc1       0x16 ./source/lwip_mqtt_freertos.o
+ .debug_macro   0x00013dd7      0x1a4 ./source/lwip_mqtt_freertos.o
+ .debug_macro   0x00013f7b       0xb2 ./source/lwip_mqtt_freertos.o
+ .debug_macro   0x0001402d       0xb3 ./source/lwip_mqtt_freertos.o
+ .debug_macro   0x000140e0       0x6a ./source/lwip_mqtt_freertos.o
+ .debug_macro   0x0001414a      0x1c3 ./source/lwip_mqtt_freertos.o
+ .debug_macro   0x0001430d      0x169 ./source/lwip_mqtt_freertos.o
+ .debug_macro   0x00014476       0x3a ./source/lwip_mqtt_freertos.o
+ .debug_macro   0x000144b0       0x16 ./source/lwip_mqtt_freertos.o
+ .debug_macro   0x000144c6       0x73 ./source/lwip_mqtt_freertos.o
+ .debug_macro   0x00014539      0x120 ./source/lwip_mqtt_freertos.o
+ .debug_macro   0x00014659       0x2e ./source/lwip_mqtt_freertos.o
+ .debug_macro   0x00014687       0x1e ./source/lwip_mqtt_freertos.o
+ .debug_macro   0x000146a5       0x10 ./source/lwip_mqtt_freertos.o
+ .debug_macro   0x000146b5       0x10 ./source/lwip_mqtt_freertos.o
+ .debug_macro   0x000146c5       0x10 ./source/lwip_mqtt_freertos.o
+ .debug_macro   0x000146d5       0x3f ./source/lwip_mqtt_freertos.o
+ .debug_macro   0x00014714       0x25 ./source/lwip_mqtt_freertos.o
+ .debug_macro   0x00014739       0x22 ./source/lwip_mqtt_freertos.o
+ .debug_macro   0x0001475b      0x15b ./source/lwip_mqtt_freertos.o
+ .debug_macro   0x000148b6      0x13d ./source/lwip_mqtt_freertos.o
+ .debug_macro   0x000149f3       0xa0 ./source/lwip_mqtt_freertos.o
+ .debug_macro   0x00014a93       0x28 ./source/lwip_mqtt_freertos.o
+ .debug_macro   0x00014abb       0x2e ./source/lwip_mqtt_freertos.o
+ .debug_macro   0x00014ae9       0xea ./source/lwip_mqtt_freertos.o
+ .debug_macro   0x00014bd3       0x10 ./source/lwip_mqtt_freertos.o
+ .debug_macro   0x00014be3       0x4d ./source/lwip_mqtt_freertos.o
+ .debug_macro   0x00014c30       0x46 ./source/lwip_mqtt_freertos.o
+ .debug_macro   0x00014c76       0x22 ./source/lwip_mqtt_freertos.o
+ .debug_macro   0x00014c98       0x16 ./source/lwip_mqtt_freertos.o
+ .debug_macro   0x00014cae       0x46 ./source/lwip_mqtt_freertos.o
+ .debug_macro   0x00014cf4       0x29 ./source/lwip_mqtt_freertos.o
+ .debug_macro   0x00014d1d      0x149 ./source/lwip_mqtt_freertos.o
+ .debug_macro   0x00014e66      0x320 ./source/lwip_mqtt_freertos.o
+ .debug_macro   0x00015186      0x45a ./source/lwip_mqtt_freertos.o
+ .debug_macro   0x000155e0       0xa4 ./source/lwip_mqtt_freertos.o
+ .debug_macro   0x00015684       0x16 ./source/lwip_mqtt_freertos.o
+ .debug_macro   0x0001569a       0x4c ./source/lwip_mqtt_freertos.o
+ .debug_macro   0x000156e6       0x2a ./source/lwip_mqtt_freertos.o
+ .debug_macro   0x00015710       0x5d ./source/lwip_mqtt_freertos.o
+ .debug_macro   0x0001576d      0x155 ./source/lwip_mqtt_freertos.o
+ .debug_macro   0x000158c2       0x10 ./source/lwip_mqtt_freertos.o
+ .debug_macro   0x000158d2       0xd0 ./source/lwip_mqtt_freertos.o
+ .debug_macro   0x000159a2       0x4c ./source/lwip_mqtt_freertos.o
+ .debug_macro   0x000159ee       0x10 ./source/lwip_mqtt_freertos.o
+ .debug_macro   0x000159fe       0x10 ./source/lwip_mqtt_freertos.o
+ .debug_macro   0x00015a0e       0x58 ./source/lwip_mqtt_freertos.o
+ .debug_macro   0x00015a66      0x114 ./source/lwip_mqtt_id_sim.o
+ .debug_macro   0x00015b7a       0x11 ./source/semihost_hardfault.o
+ .debug_macro   0x00015b8b      0x11c ./phy/fsl_phyksz8081.o
+ .debug_macro   0x00015ca7      0x115 ./mdio/fsl_enet_mdio.o
+ .debug_macro   0x00015dbc       0xca ./mdio/fsl_enet_mdio.o
+ .debug_macro   0x00015e86      0x398 ./lwip/src/netif/ethernet.o
+ .debug_macro   0x0001621e       0x3b ./lwip/src/netif/ethernet.o
+ .debug_macro   0x00016259      0x385 ./lwip/src/core/ipv4/acd.o
+ .debug_macro   0x000165de      0x43d ./lwip/src/core/ipv4/dhcp.o
+ .debug_macro   0x00016a1b       0x2e ./lwip/src/core/ipv4/dhcp.o
+ .debug_macro   0x00016a49      0x40d ./lwip/src/core/ipv4/etharp.o
+ .debug_macro   0x00016e56      0x1bd ./lwip/src/core/ipv4/etharp.o
+ .debug_macro   0x00017013      0x373 ./lwip/src/core/ipv4/icmp.o
+ .debug_macro   0x00017386       0x70 ./lwip/src/core/ipv4/icmp.o
+ .debug_macro   0x000173f6       0x1c ./lwip/src/core/ipv4/icmp.o
+ .debug_macro   0x00017412      0x401 ./lwip/src/core/ipv4/ip4.o
+ .debug_macro   0x00017813       0x16 ./lwip/src/core/ipv4/ip4.o
+ .debug_macro   0x00017829       0x47 ./lwip/src/core/ipv4/ip4.o
+ .debug_macro   0x00017870       0x2e ./lwip/src/core/ipv4/ip4.o
+ .debug_macro   0x0001789e       0xf2 ./lwip/src/core/ipv4/ip4.o
+ .debug_macro   0x00017990       0x7c ./lwip/src/core/ipv4/ip4.o
+ .debug_macro   0x00017a0c      0x1de ./lwip/src/core/ipv4/ip4.o
+ .debug_macro   0x00017bea      0x305 ./lwip/src/core/ipv4/ip4_addr.o
+ .debug_macro   0x00017eef      0x39a ./lwip/src/core/ipv4/ip4_frag.o
+ .debug_macro   0x00018289       0x10 ./lwip/src/core/ipv4/ip4_frag.o
+ .debug_macro   0x00018299      0x263 ./lwip/src/core/def.o
+ .debug_macro   0x000184fc      0x3ce ./lwip/src/core/dns.o
+ .debug_macro   0x000188ca      0x108 ./lwip/src/core/dns.o
+ .debug_macro   0x000189d2      0x2bd ./lwip/src/core/inet_chksum.o
+ .debug_macro   0x00018c8f       0x16 ./lwip/src/core/inet_chksum.o
+ .debug_macro   0x00018ca5      0x485 ./lwip/src/core/init.o
+ .debug_macro   0x0001912a       0x5e ./lwip/src/core/init.o
+ .debug_macro   0x00019188       0x40 ./lwip/src/core/init.o
+ .debug_macro   0x000191c8      0x345 ./lwip/src/core/ip.o
+ .debug_macro   0x0001950d      0x367 ./lwip/src/core/mem.o
+ .debug_macro   0x00019874      0x4d9 ./lwip/src/core/memp.o
+ .debug_macro   0x00019d4d      0x149 ./lwip/src/core/memp.o
+ .debug_macro   0x00019e96       0x41 ./lwip/src/core/memp.o
+ .debug_macro   0x00019ed7      0x122 ./lwip/src/core/memp.o
+ .debug_macro   0x00019ff9      0x126 ./lwip/src/core/memp.o
+ .debug_macro   0x0001a11f       0x24 ./lwip/src/core/memp.o
+ .debug_macro   0x0001a143       0xaa ./lwip/src/core/memp.o
+ .debug_macro   0x0001a1ed      0x458 ./lwip/src/core/netif.o
+ .debug_macro   0x0001a645      0x32f ./lwip/src/core/pbuf.o
+ .debug_macro   0x0001a974      0x361 ./lwip/src/core/raw.o
+ .debug_macro   0x0001acd5      0x276 ./lwip/src/core/sys.o
+ .debug_macro   0x0001af4b      0x3ba ./lwip/src/core/tcp.o
+ .debug_macro   0x0001b305      0x3a7 ./lwip/src/core/tcp_in.o
+ .debug_macro   0x0001b6ac      0x3b5 ./lwip/src/core/tcp_out.o
+ .debug_macro   0x0001ba61      0x488 ./lwip/src/core/timeouts.o
+ .debug_macro   0x0001bee9       0x10 ./lwip/src/core/timeouts.o
+ .debug_macro   0x0001bef9      0x407 ./lwip/src/core/udp.o
+ .debug_macro   0x0001c300      0x425 ./lwip/src/apps/mqtt/mqtt.o
+ .debug_macro   0x0001c725       0x28 ./lwip/src/apps/mqtt/mqtt.o
+ .debug_macro   0x0001c74d      0x11c ./lwip/src/apps/mqtt/mqtt.o
+ .debug_macro   0x0001c869      0x45d ./lwip/src/api/api_lib.o
+ .debug_macro   0x0001ccc6      0x439 ./lwip/src/api/api_msg.o
+ .debug_macro   0x0001d0ff      0x458 ./lwip/src/api/netifapi.o
+ .debug_macro   0x0001d557      0x3e0 ./lwip/src/api/tcpip.o
+ .debug_macro   0x0001d937      0x3eb ./lwip/port/enet_ethernetif.o
+ .debug_macro   0x0001dd22       0xba ./lwip/port/enet_ethernetif.o
+ .debug_macro   0x0001dddc       0x97 ./lwip/port/enet_ethernetif.o
+ .debug_macro   0x0001de73      0x3f6 ./lwip/port/enet_ethernetif_kinetis.o
+ .debug_macro   0x0001e269      0x336 ./lwip/port/sys_arch.o
+ .debug_macro   0x0001e59f       0x66 ./lwip/port/sys_arch.o
+ .debug_macro   0x0001e605       0xd3 ./freertos/freertos_kernel/portable/MemMang/heap_3.o
+ .debug_macro   0x0001e6d8      0x179 ./freertos/freertos_kernel/portable/GCC/ARM_CM4F/port.o
+ .debug_macro   0x0001e851       0x16 ./freertos/freertos_kernel/portable/GCC/ARM_CM4F/port.o
+ .debug_macro   0x0001e867      0x113 ./freertos/freertos_kernel/event_groups.o
+ .debug_macro   0x0001e97a       0x91 ./freertos/freertos_kernel/event_groups.o
+ .debug_macro   0x0001ea0b       0xb8 ./freertos/freertos_kernel/list.o
+ .debug_macro   0x0001eac3      0x125 ./freertos/freertos_kernel/queue.o
+ .debug_macro   0x0001ebe8      0x1a5 ./freertos/freertos_kernel/tasks.o
+ .debug_macro   0x0001ed8d       0x10 ./freertos/freertos_kernel/tasks.o
+ .debug_macro   0x0001ed9d       0x16 ./freertos/freertos_kernel/tasks.o
+ .debug_macro   0x0001edb3      0x10d ./freertos/freertos_kernel/timers.o
+ .debug_macro   0x0001eec0      0x1ba ./drivers/fsl_clock.o
+ .debug_macro   0x0001f07a      0x121 ./drivers/fsl_enet.o
+ .debug_macro   0x0001f19b      0x104 ./drivers/fsl_sim.o
+ .debug_macro   0x0001f29f      0x109 ./drivers/fsl_uart.o
+ .debug_macro   0x0001f3a8       0x10 ./drivers/fsl_uart.o
+ .debug_macro   0x0001f3b8       0x98 ./device/system_MK64F12.o
+ .debug_macro   0x0001f450      0x1d2 ./board/board.o
+ .debug_macro   0x0001f622       0x16 ./board/board.o
+ .debug_macro   0x0001f638      0x135 ./board/clock_config.o
+ .debug_macro   0x0001f76d      0x100 ./board/pin_mux.o
 
 .debug_line     0x00000000    0x2a2d9
  .debug_line    0x00000000      0x57b ./utilities/fsl_assert.o
@@ -17786,114 +17787,114 @@ OUTPUT(rse-practice-1.axf elf32-littlearm)
  .debug_line    0x00029acd      0x41c ./board/clock_config.o
  .debug_line    0x00029ee9      0x3f0 ./board/pin_mux.o
 
-.debug_str      0x00000000    0xa0193
+.debug_str      0x00000000    0xa01dd
  .debug_str     0x00000000    0x7c919 ./utilities/fsl_assert.o
                               0x7c9cc (size before relaxing)
  .debug_str     0x0007c919      0x7c4 ./startup/startup_mk64f12.o
                                0x376f (size before relaxing)
- .debug_str     0x0007d0dd    0x10f6d ./source/lwip_mqtt_freertos.o
-                              0x8dc41 (size before relaxing)
- .debug_str     0x0008e04a       0x78 ./source/lwip_mqtt_id_sim.o
+ .debug_str     0x0007d0dd    0x10fb7 ./source/lwip_mqtt_freertos.o
+                              0x8dc8b (size before relaxing)
+ .debug_str     0x0008e094       0x78 ./source/lwip_mqtt_id_sim.o
                               0x792cf (size before relaxing)
- .debug_str     0x0008e0c2       0x1f ./source/semihost_hardfault.o
+ .debug_str     0x0008e10c       0x1f ./source/semihost_hardfault.o
                                0x2f00 (size before relaxing)
- .debug_str     0x0008e0e1      0x144 ./phy/fsl_phyksz8081.o
+ .debug_str     0x0008e12b      0x144 ./phy/fsl_phyksz8081.o
                               0x7a458 (size before relaxing)
- .debug_str     0x0008e225      0x834 ./mdio/fsl_enet_mdio.o
+ .debug_str     0x0008e26f      0x834 ./mdio/fsl_enet_mdio.o
                               0x7ab9c (size before relaxing)
- .debug_str     0x0008ea59      0x6f1 ./lwip/src/netif/ethernet.o
+ .debug_str     0x0008eaa3      0x6f1 ./lwip/src/netif/ethernet.o
                               0x86b03 (size before relaxing)
- .debug_str     0x0008f14a      0x2df ./lwip/src/core/ipv4/acd.o
+ .debug_str     0x0008f194      0x2df ./lwip/src/core/ipv4/acd.o
                               0x855a7 (size before relaxing)
- .debug_str     0x0008f429      0xb3d ./lwip/src/core/ipv4/dhcp.o
+ .debug_str     0x0008f473      0xb3d ./lwip/src/core/ipv4/dhcp.o
                               0x87c55 (size before relaxing)
- .debug_str     0x0008ff66      0x42f ./lwip/src/core/ipv4/etharp.o
+ .debug_str     0x0008ffb0      0x42f ./lwip/src/core/ipv4/etharp.o
                               0x8750e (size before relaxing)
- .debug_str     0x00090395      0x3a6 ./lwip/src/core/ipv4/icmp.o
+ .debug_str     0x000903df      0x3a6 ./lwip/src/core/ipv4/icmp.o
                               0x85a8c (size before relaxing)
- .debug_str     0x0009073b     0x22c6 ./lwip/src/core/ipv4/ip4.o
+ .debug_str     0x00090785     0x22c6 ./lwip/src/core/ipv4/ip4.o
                               0x88ae9 (size before relaxing)
- .debug_str     0x00092a01       0x99 ./lwip/src/core/ipv4/ip4_addr.o
+ .debug_str     0x00092a4b       0x99 ./lwip/src/core/ipv4/ip4_addr.o
                               0x852d4 (size before relaxing)
- .debug_str     0x00092a9a      0x425 ./lwip/src/core/ipv4/ip4_frag.o
+ .debug_str     0x00092ae4      0x425 ./lwip/src/core/ipv4/ip4_frag.o
                               0x867ea (size before relaxing)
- .debug_str     0x00092ebf       0x94 ./lwip/src/core/def.o
+ .debug_str     0x00092f09       0x94 ./lwip/src/core/def.o
                               0x81742 (size before relaxing)
- .debug_str     0x00092f53      0x8d2 ./lwip/src/core/dns.o
+ .debug_str     0x00092f9d      0x8d2 ./lwip/src/core/dns.o
                               0x86d7d (size before relaxing)
- .debug_str     0x00093825      0x143 ./lwip/src/core/inet_chksum.o
+ .debug_str     0x0009386f      0x143 ./lwip/src/core/inet_chksum.o
                               0x836f0 (size before relaxing)
- .debug_str     0x00093968      0x3ac ./lwip/src/core/init.o
+ .debug_str     0x000939b2      0x3ac ./lwip/src/core/init.o
                               0x8b8e6 (size before relaxing)
- .debug_str     0x00093d14       0x16 ./lwip/src/core/ip.o
+ .debug_str     0x00093d5e       0x16 ./lwip/src/core/ip.o
                               0x85fca (size before relaxing)
- .debug_str     0x00093d2a      0x428 ./lwip/src/core/mem.o
+ .debug_str     0x00093d74      0x428 ./lwip/src/core/mem.o
                               0x834c3 (size before relaxing)
- .debug_str     0x00094152      0xa3a ./lwip/src/core/memp.o
+ .debug_str     0x0009419c      0xa3a ./lwip/src/core/memp.o
                               0x8d0c3 (size before relaxing)
- .debug_str     0x00094b8c      0x235 ./lwip/src/core/netif.o
+ .debug_str     0x00094bd6      0x235 ./lwip/src/core/netif.o
                               0x899d1 (size before relaxing)
- .debug_str     0x00094dc1      0x40f ./lwip/src/core/pbuf.o
+ .debug_str     0x00094e0b      0x40f ./lwip/src/core/pbuf.o
                               0x85439 (size before relaxing)
- .debug_str     0x000951d0      0x132 ./lwip/src/core/raw.o
+ .debug_str     0x0009521a      0x132 ./lwip/src/core/raw.o
                               0x8656f (size before relaxing)
- .debug_str     0x00095302       0x2b ./lwip/src/core/sys.o
+ .debug_str     0x0009534c       0x2b ./lwip/src/core/sys.o
                               0x819df (size before relaxing)
- .debug_str     0x0009532d      0x507 ./lwip/src/core/tcp.o
+ .debug_str     0x00095377      0x507 ./lwip/src/core/tcp.o
                               0x88838 (size before relaxing)
- .debug_str     0x00095834      0x21e ./lwip/src/core/tcp_in.o
+ .debug_str     0x0009587e      0x21e ./lwip/src/core/tcp_in.o
                               0x884ef (size before relaxing)
- .debug_str     0x00095a52      0x3f5 ./lwip/src/core/tcp_out.o
+ .debug_str     0x00095a9c      0x3f5 ./lwip/src/core/tcp_out.o
                               0x87e36 (size before relaxing)
- .debug_str     0x00095e47      0x1e0 ./lwip/src/core/timeouts.o
+ .debug_str     0x00095e91      0x1e0 ./lwip/src/core/timeouts.o
                               0x89630 (size before relaxing)
- .debug_str     0x00096027      0x214 ./lwip/src/core/udp.o
+ .debug_str     0x00096071      0x214 ./lwip/src/core/udp.o
                               0x87430 (size before relaxing)
- .debug_str     0x0009623b      0xad4 ./lwip/src/apps/mqtt/mqtt.o
+ .debug_str     0x00096285      0xad4 ./lwip/src/apps/mqtt/mqtt.o
                               0x88614 (size before relaxing)
- .debug_str     0x00096d0f      0x768 ./lwip/src/api/api_lib.o
+ .debug_str     0x00096d59      0x768 ./lwip/src/api/api_lib.o
                               0x898eb (size before relaxing)
- .debug_str     0x00097477      0x527 ./lwip/src/api/api_msg.o
+ .debug_str     0x000974c1      0x527 ./lwip/src/api/api_msg.o
                               0x88dbe (size before relaxing)
- .debug_str     0x0009799e      0x2c4 ./lwip/src/api/netifapi.o
+ .debug_str     0x000979e8      0x2c4 ./lwip/src/api/netifapi.o
                               0x87abb (size before relaxing)
- .debug_str     0x00097c62      0x390 ./lwip/src/api/tcpip.o
+ .debug_str     0x00097cac      0x390 ./lwip/src/api/tcpip.o
                               0x873a0 (size before relaxing)
- .debug_str     0x00097ff2      0xac6 ./lwip/port/enet_ethernetif.o
+ .debug_str     0x0009803c      0xac6 ./lwip/port/enet_ethernetif.o
                               0x87578 (size before relaxing)
- .debug_str     0x00098ab8      0xcd9 ./lwip/port/enet_ethernetif_kinetis.o
+ .debug_str     0x00098b02      0xcd9 ./lwip/port/enet_ethernetif_kinetis.o
                               0x887fe (size before relaxing)
- .debug_str     0x00099791      0x38f ./lwip/port/sys_arch.o
+ .debug_str     0x000997db      0x38f ./lwip/port/sys_arch.o
                               0x85da1 (size before relaxing)
- .debug_str     0x00099b20       0xbd ./freertos/freertos_kernel/portable/MemMang/heap_3.o
+ .debug_str     0x00099b6a       0xbd ./freertos/freertos_kernel/portable/MemMang/heap_3.o
                                0x8303 (size before relaxing)
- .debug_str     0x00099bdd      0x829 ./freertos/freertos_kernel/portable/GCC/ARM_CM4F/port.o
+ .debug_str     0x00099c27      0x829 ./freertos/freertos_kernel/portable/GCC/ARM_CM4F/port.o
                                0x8ab0 (size before relaxing)
- .debug_str     0x0009a406      0x418 ./freertos/freertos_kernel/event_groups.o
+ .debug_str     0x0009a450      0x418 ./freertos/freertos_kernel/event_groups.o
                                0x8fb9 (size before relaxing)
- .debug_str     0x0009a81e       0xb0 ./freertos/freertos_kernel/list.o
+ .debug_str     0x0009a868       0xb0 ./freertos/freertos_kernel/list.o
                                0x7d30 (size before relaxing)
- .debug_str     0x0009a8ce      0x800 ./freertos/freertos_kernel/queue.o
+ .debug_str     0x0009a918      0x800 ./freertos/freertos_kernel/queue.o
                                0x93de (size before relaxing)
- .debug_str     0x0009b0ce     0x14d4 ./freertos/freertos_kernel/tasks.o
+ .debug_str     0x0009b118     0x14d4 ./freertos/freertos_kernel/tasks.o
                                0xa53e (size before relaxing)
- .debug_str     0x0009c5a2      0x600 ./freertos/freertos_kernel/timers.o
+ .debug_str     0x0009c5ec      0x600 ./freertos/freertos_kernel/timers.o
                                0x9906 (size before relaxing)
- .debug_str     0x0009cba2     0x15ac ./drivers/fsl_clock.o
+ .debug_str     0x0009cbec     0x15ac ./drivers/fsl_clock.o
                               0x7b971 (size before relaxing)
- .debug_str     0x0009e14e      0x922 ./drivers/fsl_enet.o
+ .debug_str     0x0009e198      0x922 ./drivers/fsl_enet.o
                               0x7c0a5 (size before relaxing)
- .debug_str     0x0009ea70       0xff ./drivers/fsl_sim.o
+ .debug_str     0x0009eaba       0xff ./drivers/fsl_sim.o
                               0x7944c (size before relaxing)
- .debug_str     0x0009eb6f      0xe22 ./drivers/fsl_uart.o
+ .debug_str     0x0009ebb9      0xe22 ./drivers/fsl_uart.o
                               0x7b1e5 (size before relaxing)
- .debug_str     0x0009f991       0xc3 ./device/system_MK64F12.o
+ .debug_str     0x0009f9db       0xc3 ./device/system_MK64F12.o
                               0x783b1 (size before relaxing)
- .debug_str     0x0009fa54       0xc4 ./board/board.o
+ .debug_str     0x0009fa9e       0xc4 ./board/board.o
                               0x7db4d (size before relaxing)
- .debug_str     0x0009fb18      0x306 ./board/clock_config.o
+ .debug_str     0x0009fb62      0x306 ./board/clock_config.o
                               0x7a2ea (size before relaxing)
- .debug_str     0x0009fe1e      0x375 ./board/pin_mux.o
+ .debug_str     0x0009fe68      0x375 ./board/pin_mux.o
                               0x79a05 (size before relaxing)
 
 .comment        0x00000000       0x76

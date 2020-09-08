@@ -89,6 +89,8 @@
 #define APP_THREAD_PRIO DEFAULT_THREAD_PRIO
 
 /* Definitions used for practice 1 */
+#define ADAFRUIT_USER      "wapi"
+#define ADAFRUIT_PASSWORD  "aio_BjEg461TUmFzz6V62rCywFAT8YsG"
 #define ADAFRUIT_ADC_TOPIC "wapi/feeds/text"
 #define ADAFRUIT_LED_TOPIC "wapi/feeds/led"
 
@@ -114,8 +116,8 @@ static char client_id[40];
 /*! @brief MQTT client information. */
 static const struct mqtt_connect_client_info_t mqtt_client_info = {
     .client_id   = EXAMPLE_MQTT_CLIENT_ID,
-    .client_user = "wapi",
-    .client_pass = "aio_BjEg461TUmFzz6V62rCywFAT8YsG",
+    .client_user = ADAFRUIT_USER,
+    .client_pass = ADAFRUIT_PASSWORD,
     .keep_alive  = 100,
     .will_topic  = NULL,
     .will_msg    = NULL,
@@ -306,7 +308,7 @@ static void mqtt_message_published_cb(void *arg, err_t err)
 static void publish_message(void *ctx)
 {
     static const char *topic   = "wapi/feeds/text";
-    static const char *message = "Wapi :(";
+    static const char *message = "Template message";
 
     LWIP_UNUSED_ARG(ctx);
 
