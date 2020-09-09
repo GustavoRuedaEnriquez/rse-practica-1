@@ -110,8 +110,8 @@ static char client_id[40];
 /*! @brief MQTT client information. */
 static const struct mqtt_connect_client_info_t mqtt_client_info = {
     .client_id   = EXAMPLE_MQTT_CLIENT_ID,
-    .client_user = "wapi",
-    .client_pass = "aio_zNrj92gUTdjcYevbP33oE9vNfyUR",
+    .client_user = "sinsel",
+    .client_pass = "aio_laXT76G6EV3P5R1UksOlrF4u4MwF",
     .keep_alive  = 100,
     .will_topic  = NULL,
     .will_msg    = NULL,
@@ -191,7 +191,7 @@ static void mqtt_incoming_data_cb(void *arg, const u8_t *data, u16_t len, u8_t f
  */
 static void mqtt_subscribe_topics(mqtt_client_t *client)
 {
-    static const char *topics[] = {"wapi/feeds/text", "wapi/feeds/humidity"};
+    static const char *topics[] = {"sinsel/feeds/adc", "sinsel/feeds/humidity"};
     int qos[]                   = {1, 1};
     err_t err;
     int i;
@@ -295,8 +295,8 @@ static void mqtt_message_published_cb(void *arg, err_t err)
  */
 static void publish_message(void *ctx)
 {
-    static const char *topic   = "wapi/feeds/text";
-    static const char *message = "Wapi :(";
+    static const char *topic   = "sinsel/feeds/adc";
+    static const char *message = "45";
 
     LWIP_UNUSED_ARG(ctx);
 
