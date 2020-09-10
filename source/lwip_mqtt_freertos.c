@@ -37,9 +37,20 @@
 #include "clock_config.h"
 #include "fsl_phyksz8081.h"
 #include "fsl_enet_mdio.h"
+
+#include "fsl_debug_console.h"
+#include "fsl_adc16.h"
+
+#include "pin_mux.h"
+#include "clock_config.h"
+
 /*******************************************************************************
  * Definitions
  ******************************************************************************/
+#define DEMO_ADC16_BASE ADC0
+#define DEMO_ADC16_CHANNEL_GROUP 0U
+#define DEMO_ADC16_USER_CHANNEL 12U
+#define ADC_MAXVALUE 4096
 
 /* MAC address configuration. */
 #define configMAC_ADDR                     \
@@ -127,6 +138,9 @@ static ip_addr_t mqtt_addr;
 
 /*! @brief Indicates connection to MQTT broker. */
 static volatile bool connected = false;
+
+//ADC config struct
+static adc16_channel_config_t adc16ChannelConfigStruct;
 
 /*******************************************************************************
  * Code
@@ -296,9 +310,25 @@ static void mqtt_message_published_cb(void *arg, err_t err)
 static void publish_message(void *ctx)
 {
     static const char *topic   = "sinsel/feeds/adc";
-    static const char *message = "45";
+    static char *message;
+
+    // ADC value
+    uint32_t value;
 
     LWIP_UNUSED_ARG(ctx);
+
+    // Read ADC
+	ADC16_SetChannelConfig(DEMO_ADC16_BASE, DEMO_ADC16_CHANNEL_GROUP, &adc16ChannelConfigStruct);
+	while (0U == (kADC16_ChannelConversionDoneFlag &
+				  ADC16_GetChannelStatusFlags(DEMO_ADC16_BASE, DEMO_ADC16_CHANNEL_GROUP)))
+	{
+	}
+
+	value = ADC16_GetChannelConversionValue(DEMO_ADC16_BASE, DEMO_ADC16_CHANNEL_GROUP) / ADC_MAXVALUE;
+
+	PRINTF("Porcentage Value: %d\r\n", value);
+
+	itoa(value,message,10);
 
     PRINTF("Going to publish to the topic \"%s\"...\r\n", topic);
 
@@ -370,19 +400,18 @@ static void app_thread(void *arg)
     }
 
     /* Publish some messages */
-    for (i = 0; i < 5;)
+    while (1)
     {
         if (connected)
         {
-            err = tcpip_callback(publish_message, NULL);
+			err = tcpip_callback(publish_message, NULL);
             if (err != ERR_OK)
             {
                 PRINTF("Failed to invoke publishing of a message on the tcpip_thread: %d.\r\n", err);
             }
-            i++;
         }
 
-        sys_msleep(1000U);
+        sys_msleep(10000U);
     }
 
     vTaskDelete(NULL);
@@ -424,10 +453,39 @@ int main(void)
 #endif /* FSL_FEATURE_SOC_LPC_ENET_COUNT */
     };
 
+    //ADC Config
+    adc16_config_t adc16ConfigStruct;
+
     SYSMPU_Type *base = SYSMPU;
     BOARD_InitBootPins();
     BOARD_InitBootClocks();
     BOARD_InitDebugConsole();
+
+    /*ADC Calibration*/
+
+    ADC16_GetDefaultConfig(&adc16ConfigStruct);
+    #ifdef BOARD_ADC_USE_ALT_VREF
+        adc16ConfigStruct.referenceVoltageSource = kADC16_ReferenceVoltageSourceValt;
+    #endif
+        ADC16_Init(DEMO_ADC16_BASE, &adc16ConfigStruct);
+        ADC16_EnableHardwareTrigger(DEMO_ADC16_BASE, false); /* Make sure the software trigger is used. */
+    #if defined(FSL_FEATURE_ADC16_HAS_CALIBRATION) && FSL_FEATURE_ADC16_HAS_CALIBRATION
+        if (kStatus_Success == ADC16_DoAutoCalibration(DEMO_ADC16_BASE))
+        {
+            PRINTF("ADC16_DoAutoCalibration() Done.\r\n");
+        }
+        else
+        {
+            PRINTF("ADC16_DoAutoCalibration() Failed.\r\n");
+        }
+    #endif /* FSL_FEATURE_ADC16_HAS_CALIBRATION */
+
+	adc16ChannelConfigStruct.channelNumber = DEMO_ADC16_USER_CHANNEL;
+		adc16ChannelConfigStruct.enableInterruptOnConversionCompleted = false;
+	#if defined(FSL_FEATURE_ADC16_HAS_DIFF_MODE) && FSL_FEATURE_ADC16_HAS_DIFF_MODE
+		adc16ChannelConfigStruct.enableDifferentialConversion = false;
+	#endif /* FSL_FEATURE_ADC16_HAS_DIFF_MODE */
+
     /* Disable SYSMPU. */
     base->CESR &= ~SYSMPU_CESR_VLD_MASK;
     generate_client_id();

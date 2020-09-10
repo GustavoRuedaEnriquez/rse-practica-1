@@ -96,7 +96,8 @@ source/lwip_mqtt_freertos.o source/lwip_mqtt_freertos.d: \
  C:\Users\sinse\Desktop\Andre\7\ Semestre\RSE\rse-practica-1\phy/fsl_phyksz8081.h \
  C:\Users\sinse\Desktop\Andre\7\ Semestre\RSE\rse-practica-1\phy/fsl_phy.h \
  C:\Users\sinse\Desktop\Andre\7\ Semestre\RSE\rse-practica-1\mdio/fsl_enet_mdio.h \
- C:\Users\sinse\Desktop\Andre\7\ Semestre\RSE\rse-practica-1\mdio/fsl_mdio.h
+ C:\Users\sinse\Desktop\Andre\7\ Semestre\RSE\rse-practica-1\mdio/fsl_mdio.h \
+ C:\Users\sinse\Desktop\Andre\7\ Semestre\RSE\rse-practica-1\drivers/fsl_adc16.h
 
 C:\Users\sinse\Desktop\Andre\7\ Semestre\RSE\rse-practica-1\lwip\src\include/lwip/opt.h:
 
@@ -291,3 +292,5 @@ C:\Users\sinse\Desktop\Andre\7\ Semestre\RSE\rse-practica-1\phy/fsl_phy.h:
 C:\Users\sinse\Desktop\Andre\7\ Semestre\RSE\rse-practica-1\mdio/fsl_enet_mdio.h:
 
 C:\Users\sinse\Desktop\Andre\7\ Semestre\RSE\rse-practica-1\mdio/fsl_mdio.h:
+
+C:\Users\sinse\Desktop\Andre\7\ Semestre\RSE\rse-practica-1\drivers/fsl_adc16.h:
