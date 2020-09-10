@@ -139,12 +139,15 @@ static ip_addr_t mqtt_addr;
 /*! @brief Indicates connection to MQTT broker. */
 static volatile bool connected = false;
 
-//ADC config struct
-static adc16_channel_config_t adc16ChannelConfigStruct;
-
 /*******************************************************************************
  * Code
  ******************************************************************************/
+
+char* my_itoa(int number) {
+   static char str[20]; //create an empty string to store number
+   sprintf(str, "%d", number); //make the number into string using sprintf function
+   return str;
+}
 
 /*!
  * @brief Called when subscription request finishes.
@@ -310,7 +313,9 @@ static void mqtt_message_published_cb(void *arg, err_t err)
 static void publish_message(void *ctx)
 {
     static const char *topic   = "sinsel/feeds/adc";
-    static char *message;
+    static const char *message;
+
+    adc16_channel_config_t adc16ChannelConfigStruct;
 
     // ADC value
     uint32_t value;
@@ -324,11 +329,10 @@ static void publish_message(void *ctx)
 	{
 	}
 
-	value = ADC16_GetChannelConversionValue(DEMO_ADC16_BASE, DEMO_ADC16_CHANNEL_GROUP) / ADC_MAXVALUE;
+	value = ADC16_GetChannelConversionValue(DEMO_ADC16_BASE, DEMO_ADC16_CHANNEL_GROUP) * 100 / ADC_MAXVALUE;
 
 	PRINTF("Porcentage Value: %d\r\n", value);
-
-	itoa(value,message,10);
+	message = my_itoa(value);
 
     PRINTF("Going to publish to the topic \"%s\"...\r\n", topic);
 
@@ -409,9 +413,10 @@ static void app_thread(void *arg)
             {
                 PRINTF("Failed to invoke publishing of a message on the tcpip_thread: %d.\r\n", err);
             }
+            i++;
         }
 
-        sys_msleep(10000U);
+        sys_msleep(1000U);
     }
 
     vTaskDelete(NULL);
