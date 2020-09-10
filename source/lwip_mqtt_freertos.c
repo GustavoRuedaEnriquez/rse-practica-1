@@ -37,9 +37,20 @@
 #include "clock_config.h"
 #include "fsl_phyksz8081.h"
 #include "fsl_enet_mdio.h"
+
+#include "fsl_debug_console.h"
+#include "fsl_adc16.h"
+
+#include "pin_mux.h"
+#include "clock_config.h"
+
 /*******************************************************************************
  * Definitions
  ******************************************************************************/
+#define DEMO_ADC16_BASE ADC0
+#define DEMO_ADC16_CHANNEL_GROUP 0U
+#define DEMO_ADC16_USER_CHANNEL 12U
+#define ADC_MAXVALUE 4096
 
 /* MAC address configuration. */
 #define configMAC_ADDR                     \
@@ -89,10 +100,10 @@
 #define APP_THREAD_PRIO DEFAULT_THREAD_PRIO
 
 /* Definitions used for practice 1 */
-#define ADAFRUIT_USER      "wapi"
-#define ADAFRUIT_PASSWORD  "aio_BjEg461TUmFzz6V62rCywFAT8YsG"
-#define ADAFRUIT_ADC_TOPIC "wapi/feeds/text"
-#define ADAFRUIT_LED_TOPIC "wapi/feeds/led"
+#define ADAFRUIT_USER      "sofmich"
+#define ADAFRUIT_PASSWORD  "aio_SYAm70h4eXXF4zUGBVx0xDgMcSUk"
+#define ADAFRUIT_ADC_TOPIC "sofmich/feeds/ADC values"
+#define ADAFRUIT_LED_TOPIC "sofmich/feeds/led"
 
 /*******************************************************************************
  * Prototypes
@@ -103,7 +114,7 @@ static void connect_to_mqtt(void *ctx);
 /*******************************************************************************
  * Variables
  ******************************************************************************/
-
+static adc16_channel_config_t adc16ChannelConfigStruct;
 static mdio_handle_t mdioHandle = {.ops = &EXAMPLE_MDIO_OPS};
 static phy_handle_t phyHandle   = {.phyAddr = EXAMPLE_PHY_ADDRESS, .mdioHandle = &mdioHandle, .ops = &EXAMPLE_PHY_OPS};
 
@@ -137,6 +148,12 @@ static volatile bool connected = false;
 /*******************************************************************************
  * Code
  ******************************************************************************/
+
+char* my_itoa(int number) {
+   static char str[20]; //create an empty string to store number
+   sprintf(str, "%d", number); //make the number into string using sprintf function
+   return str;
+}
 
 /*!
  * @brief Called when subscription request finishes.
@@ -307,14 +324,28 @@ static void mqtt_message_published_cb(void *arg, err_t err)
  */
 static void publish_message(void *ctx)
 {
-    static const char *topic   = "wapi/feeds/text";
-    static const char *message = "Template message";
+    static const char *message;
+
+    // ADC value
+    uint32_t value;
 
     LWIP_UNUSED_ARG(ctx);
 
-    PRINTF("Going to publish to the topic \"%s\"...\r\n", topic);
+    // Read ADC
+	ADC16_SetChannelConfig(DEMO_ADC16_BASE, DEMO_ADC16_CHANNEL_GROUP, &adc16ChannelConfigStruct);
+	while (0U == (kADC16_ChannelConversionDoneFlag &
+				  ADC16_GetChannelStatusFlags(DEMO_ADC16_BASE, DEMO_ADC16_CHANNEL_GROUP)))
+	{
+	}
 
-    mqtt_publish(mqtt_client, topic, message, strlen(message), 1, 0, mqtt_message_published_cb, (void *)topic);
+	value = ADC16_GetChannelConversionValue(DEMO_ADC16_BASE, DEMO_ADC16_CHANNEL_GROUP) * 100 / ADC_MAXVALUE;
+
+	PRINTF("Porcentage Value: %d\r\n", value);
+	message = my_itoa(value);
+
+    PRINTF("Going to publish to the topic \"%s\"...\r\n", ADAFRUIT_ADC_TOPIC);
+
+    mqtt_publish(mqtt_client, ADAFRUIT_ADC_TOPIC, message, strlen(message), 1, 0, mqtt_message_published_cb, (void *)ADAFRUIT_ADC_TOPIC);
 }
 
 /*!
@@ -382,11 +413,11 @@ static void app_thread(void *arg)
     }
 
     /* Publish some messages */
-    for (i = 0; i < 5;)
+    while (1)
     {
         if (connected)
         {
-            err = tcpip_callback(publish_message, NULL);
+			err = tcpip_callback(publish_message, NULL);
             if (err != ERR_OK)
             {
                 PRINTF("Failed to invoke publishing of a message on the tcpip_thread: %d.\r\n", err);
@@ -436,16 +467,46 @@ int main(void)
 #endif /* FSL_FEATURE_SOC_LPC_ENET_COUNT */
     };
 
+
     /* PREPARE LED COMPONENT */
     SIM->SCGC5 = 0x2400;
 	PORTE->PCR[26] = 0x00000100;
 	GPIOE->PDOR |= 0x04000000;
 	GPIOE->PDDR |= 0x04000000;
 
+    //ADC Config
+    adc16_config_t adc16ConfigStruct;
+
     SYSMPU_Type *base = SYSMPU;
     BOARD_InitBootPins();
     BOARD_InitBootClocks();
     BOARD_InitDebugConsole();
+
+    /*ADC Calibration*/
+
+    ADC16_GetDefaultConfig(&adc16ConfigStruct);
+    #ifdef BOARD_ADC_USE_ALT_VREF
+        adc16ConfigStruct.referenceVoltageSource = kADC16_ReferenceVoltageSourceValt;
+    #endif
+        ADC16_Init(DEMO_ADC16_BASE, &adc16ConfigStruct);
+        ADC16_EnableHardwareTrigger(DEMO_ADC16_BASE, false); /* Make sure the software trigger is used. */
+    #if defined(FSL_FEATURE_ADC16_HAS_CALIBRATION) && FSL_FEATURE_ADC16_HAS_CALIBRATION
+        if (kStatus_Success == ADC16_DoAutoCalibration(DEMO_ADC16_BASE))
+        {
+            PRINTF("ADC16_DoAutoCalibration() Done.\r\n");
+        }
+        else
+        {
+            PRINTF("ADC16_DoAutoCalibration() Failed.\r\n");
+        }
+    #endif /* FSL_FEATURE_ADC16_HAS_CALIBRATION */
+
+	adc16ChannelConfigStruct.channelNumber = DEMO_ADC16_USER_CHANNEL;
+		adc16ChannelConfigStruct.enableInterruptOnConversionCompleted = false;
+	#if defined(FSL_FEATURE_ADC16_HAS_DIFF_MODE) && FSL_FEATURE_ADC16_HAS_DIFF_MODE
+		adc16ChannelConfigStruct.enableDifferentialConversion = false;
+	#endif /* FSL_FEATURE_ADC16_HAS_DIFF_MODE */
+
     /* Disable SYSMPU. */
     base->CESR &= ~SYSMPU_CESR_VLD_MASK;
     generate_client_id();
