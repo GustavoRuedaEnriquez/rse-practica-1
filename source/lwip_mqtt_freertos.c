@@ -424,8 +424,8 @@ static void app_thread(void *arg)
             }
             i++;
         }
-
-        sys_msleep(1000U);
+        /* Sleep for 10 seconds */
+        sys_msleep(10000U);
     }
 
     vTaskDelete(NULL);
